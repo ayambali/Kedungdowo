@@ -41,7 +41,7 @@ export async function getStatistikPenduduk() {
   // Group by kategori
   const grouped: Record<string, { id: number; label: string; jumlah: number }[]> = {};
   
-  data.forEach((item) => {
+  data.forEach((item: any) => {
     if (!grouped[item.kategori]) {
       grouped[item.kategori] = [];
     }
