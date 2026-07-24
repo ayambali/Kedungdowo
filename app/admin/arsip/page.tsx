@@ -7,7 +7,7 @@ export default async function ArsipPage() {
   const initialData = await getSemuaArsip();
   
   // Format dates so they can be serialized properly to Client Component
-  const formattedData = initialData.map((item) => ({
+  const formattedData = initialData.map((item: any) => ({
     ...item,
     createdAt: item.createdAt.toISOString(),
   }));
