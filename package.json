@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "seed": "node -r ts-node/register prisma/seed.ts"
+    "seed": "node -r ts-node/register prisma/seed.ts",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@ai-sdk/google": "^4.0.2",
