@@ -67,7 +67,7 @@ export default function SearchForm({
   const hasSearch = judul || nomor || tahun || initialKategori;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       <div className="md:col-span-2">
         <input 
           type="text" 

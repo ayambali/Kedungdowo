@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Izinkan akses dari IP HP Anda saat mode development
+  allowedDevOrigins: ["192.168.100.44"],
+  
   images: {
     remotePatterns: [
       {

@@ -163,14 +163,14 @@ export default function LayananPage() {
       {/* ===== HERO ===== */}
       <section className="py-16 md:py-32 bg-surface relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(#0d631b_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.03] pointer-events-none" />
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center mt-12 md:mt-0">
+        <div className="w-full max-w-7xl mx-auto px-6 relative z-10 text-center mt-12 md:mt-0">
           <AnimateIn delay={0.1} direction="up">
             <p className="text-xs font-medium text-primary tracking-[0.2em] uppercase mb-6 inline-block border-b-2 border-primary pb-2">
               Layanan Publik
             </p>
           </AnimateIn>
           <AnimateIn delay={0.2} direction="up">
-            <h1 className="font-serif text-4xl md:text-6xl font-bold text-on-surface mb-8 leading-tight tracking-tight">
+            <h1 className="font-serif text-2xl md:text-4xl md:text-6xl font-bold text-on-surface mb-8 leading-tight tracking-tight">
               Pusat{" "}
               <span className="italic font-light text-primary">Layanan</span>
               <br />& Informasi Publik
@@ -187,7 +187,7 @@ export default function LayananPage() {
 
       {/* ===== KONTEN UTAMA ===== */}
       <section className="py-16 md:py-24 bg-surface-container-low relative">
-        <div className="max-w-[900px] mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <AnimateIn delay={0.1} direction="up">
             {/* --- TAB NAVIGASI --- */}
             <div className="flex bg-surface-container rounded-2xl p-1.5 mb-8 border border-outline-variant/30">
@@ -226,16 +226,16 @@ export default function LayananPage() {
                   <div className="absolute bottom-0 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl translate-y-1/3 pointer-events-none"></div>
                   <div className="absolute inset-0 bg-[linear-gradient(to_right,transparent_0%,rgba(255,255,255,0.05)_50%,transparent_100%)] skew-x-12 opacity-50 pointer-events-none"></div>
                   
-                  <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="relative z-10 flex flex-col sm:flex-col md:flex-row sm:items-center justify-between gap-4">
                     <div className="flex items-center gap-5">
                       <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/20 shadow-inner">
                         <Icon
                           name="description"
-                          className="text-3xl text-white drop-shadow-md"
+                          className="text-2xl md:text-3xl text-white drop-shadow-md"
                         />
                       </div>
                       <div>
-                        <h2 className="text-white font-serif text-2xl md:text-3xl font-bold tracking-tight">
+                        <h2 className="text-white font-serif text-2xl md:text-2xl md:text-3xl font-bold tracking-tight">
                           Formulir Layanan
                         </h2>
                         <p className="text-white/80 text-sm mt-1.5 font-medium">
@@ -246,7 +246,7 @@ export default function LayananPage() {
                   </div>
                 </div>
 
-                <div className="p-8 md:p-10">
+                <div className="p-4 md:p-8 md:p-4 md:p-10">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <label htmlFor="kategori" className={labelClass}>
@@ -270,7 +270,7 @@ export default function LayananPage() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="namaPemohon" className={labelClass}>
                           Nama Lengkap
@@ -363,7 +363,7 @@ export default function LayananPage() {
             {/* ================================ */}
             {activeTab === "data" && (
               <div className="bg-surface-container-lowest rounded-3xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] border border-outline/20 overflow-hidden">
-                <div className="relative overflow-hidden bg-gradient-to-br from-primary via-[#0f7a24] to-primary-container px-8 py-8 md:px-10 md:py-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+                <div className="relative overflow-hidden bg-gradient-to-br from-primary via-[#0f7a24] to-primary-container px-8 py-8 md:px-10 md:py-10 flex flex-col sm:flex-col md:flex-row sm:items-center justify-between gap-6">
                   {/* Dekorasi Background */}
                   <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
                   <div className="absolute bottom-0 left-10 w-32 h-32 bg-white/10 rounded-full blur-2xl translate-y-1/3 pointer-events-none"></div>
@@ -371,10 +371,10 @@ export default function LayananPage() {
                   
                   <div className="relative z-10 flex items-center gap-5">
                     <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/20 shadow-inner">
-                      <Icon name="fact_check" className="text-3xl text-white drop-shadow-md" />
+                      <Icon name="fact_check" className="text-2xl md:text-3xl text-white drop-shadow-md" />
                     </div>
                     <div>
-                      <h2 className="text-white font-serif text-2xl md:text-3xl font-bold tracking-tight">
+                      <h2 className="text-white font-serif text-2xl md:text-2xl md:text-3xl font-bold tracking-tight">
                         Daftar Permohonan
                       </h2>
                       <p className="text-white/80 text-sm mt-1.5 font-medium">
@@ -392,7 +392,7 @@ export default function LayananPage() {
                   </button>
                 </div>
 
-                <div className="p-6 md:p-8">
+                <div className="p-4 md:p-6 md:p-4 md:p-8">
                   {/* --- Kotak Pencarian --- */}
                   <div className="mb-6 relative">
                     <Icon name="search" className="absolute left-4 top-1/2 -translate-y-1/2 text-outline" />
@@ -418,7 +418,7 @@ export default function LayananPage() {
                     </div>
                   ) : filteredData.length === 0 ? (
                     <div className="text-center py-16">
-                      <Icon name="inbox" className="text-5xl text-outline/30 mb-4" />
+                      <Icon name="inbox" className="text-3xl md:text-5xl text-outline/30 mb-4" />
                       <p className="text-sm text-on-surface-variant">
                         {searchQuery ? "Tidak ada permohonan yang sesuai pencarian." : "Belum ada data permohonan."}
                       </p>
@@ -426,7 +426,7 @@ export default function LayananPage() {
                   ) : (
                     <>
                       {/* Tabel Desktop */}
-                      <div className="hidden md:block overflow-x-auto">
+                      <div className="w-full overflow-x-auto whitespace-nowrap scrollbar-hide">
                         <table className="w-full text-sm">
                           <thead>
                             <tr className="border-b-2 border-outline/20">
@@ -470,9 +470,7 @@ export default function LayananPage() {
                                   <StatusBadge status={item.status} />
                                 </td>
                                 <td className="py-4 px-4 text-center align-top">
-                                  <button
-                                    onClick={() => setSelectedItem(item)}
-                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-xs font-semibold text-on-surface"
+                                  <button onClick={() => setSelectedItem(item)} className="min-h-[44px] py-2 px-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-xs font-semibold text-on-surface"
                                   >
                                     <Icon name="visibility" className="text-[14px]" /> Lihat Detail
                                   </button>
@@ -515,9 +513,7 @@ export default function LayananPage() {
                               </div>
                             )}
                             <div className="pt-2 border-t border-outline/10 mt-2">
-                              <button
-                                onClick={() => setSelectedItem(item)}
-                                className="w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-xs font-semibold text-on-surface"
+                              <button onClick={() => setSelectedItem(item)} className="min-h-[44px] py-2 px-4 w-full flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors text-xs font-semibold text-on-surface"
                               >
                                 <Icon name="visibility" className="text-[14px]" /> Baca Selengkapnya
                               </button>
@@ -593,17 +589,15 @@ export default function LayananPage() {
               <h3 className="font-serif text-xl font-bold text-on-surface flex items-center gap-2">
                 <Icon name="description" className="text-primary" /> Detail Laporan
               </h3>
-              <button 
-                onClick={() => setSelectedItem(null)}
-                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container text-on-surface-variant transition-colors"
+              <button onClick={() => setSelectedItem(null)} className="min-h-[44px] py-2 px-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container text-on-surface-variant transition-colors"
               >
                 <Icon name="close" className="text-xl" />
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-6 bg-surface-container-lowest flex-1">
+            <div className="p-4 md:p-6 overflow-y-auto space-y-6 bg-surface-container-lowest flex-1">
               <div className="bg-surface-container/30 rounded-2xl p-5 border border-outline-variant/20">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Nama Pemohon</p>
                     <p className="font-medium text-on-surface text-sm">{samarkanNama(selectedItem.namaPemohon)}</p>
@@ -649,9 +643,7 @@ export default function LayananPage() {
             </div>
 
             <div className="px-6 py-4 border-t border-outline-variant/20 bg-surface-container-low flex justify-end">
-              <button
-                onClick={() => setSelectedItem(null)}
-                className="px-6 py-2 rounded-xl text-sm font-semibold bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm"
+              <button onClick={() => setSelectedItem(null)} className="min-h-[44px] py-2 px-4 px-6 py-2 rounded-xl text-sm font-semibold bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm"
               >
                 Tutup
               </button>
@@ -672,7 +664,7 @@ export default function LayananPage() {
                 <p className="font-semibold text-primary text-sm mb-1">Berhasil Terkirim!</p>
                 <p className="text-sm text-on-surface-variant leading-relaxed">{successMsg}</p>
               </div>
-              <button onClick={() => setSuccessMsg("")} className="text-outline hover:text-on-surface p-1">
+              <button onClick={() => setSuccessMsg("")} className="min-h-[44px] py-2 px-4 text-outline hover:text-on-surface p-1">
                 <Icon name="close" className="text-xl" />
               </button>
             </div>
@@ -686,7 +678,7 @@ export default function LayananPage() {
                 <p className="font-semibold text-error text-sm mb-1">Gagal Mengirim</p>
                 <p className="text-sm text-on-surface-variant leading-relaxed">{errorMsg}</p>
               </div>
-              <button onClick={() => setErrorMsg("")} className="text-outline hover:text-on-surface p-1">
+              <button onClick={() => setErrorMsg("")} className="min-h-[44px] py-2 px-4 text-outline hover:text-on-surface p-1">
                 <Icon name="close" className="text-xl" />
               </button>
             </div>

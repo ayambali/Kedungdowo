@@ -47,14 +47,14 @@ export default async function ProfilPage() {
     <main className="w-full">
       {/* 1. Hero Section */}
       <section className="py-16 md:py-32 bg-surface relative overflow-hidden">
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center mt-12 md:mt-0">
+        <div className="w-full max-w-7xl mx-auto px-6 relative z-10 text-center mt-12 md:mt-0">
           <AnimateIn delay={0.1} direction="up">
             <p className="text-xs font-medium text-primary tracking-[0.2em] uppercase mb-6 inline-block border-b-2 border-primary pb-2">
               Mengenal Lebih Dekat
             </p>
           </AnimateIn>
           <AnimateIn delay={0.2} direction="up">
-            <h1 className="font-serif text-4xl md:text-6xl font-bold text-on-surface mb-8 leading-tight tracking-tight">
+            <h1 className="font-serif text-2xl md:text-4xl md:text-6xl font-bold text-on-surface mb-8 leading-tight tracking-tight">
               Profil <span className="italic font-light text-primary">Desa</span><br />Kedungdowo
             </h1>
           </AnimateIn>
@@ -70,7 +70,7 @@ export default async function ProfilPage() {
 
       {/* 2. Informasi Umum & Wilayah */}
       <section className="pb-16 md:pb-32 pt-12 relative bg-surface">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
             {/* Left Column: Lokasi */}
             <div className="lg:col-span-7">
@@ -80,14 +80,14 @@ export default async function ProfilPage() {
                     <span className="flex items-center justify-center w-12 h-12 rounded-full bg-surface-container text-primary">
                       <Icon name="location_on" />
                     </span>
-                    <h2 className="font-serif text-3xl md:text-4xl font-semibold text-on-surface">Lokasi <span className="italic font-light text-on-surface-variant">&amp;</span> Wilayah</h2>
+                    <h2 className="font-serif text-2xl md:text-3xl md:text-2xl md:text-4xl font-semibold text-on-surface">Lokasi <span className="italic font-light text-on-surface-variant">&amp;</span> Wilayah</h2>
                   </div>
                   <p className="text-lg text-on-surface-variant mb-6 leading-relaxed">
                     Desa Kedungdowo merupakan salah satu dari 16 desa di Kecamatan Andong, Kabupaten Boyolali, yang terletak kurang lebih 2 km ke arah Timur dari pusat kecamatan. Desa ini memiliki wilayah seluas <strong className="text-on-surface font-semibold">295.569 Ha</strong> dengan iklim tropis khas Indonesia yang mendukung sektor pertanian.
                   </p>
 
                   {/* Batas Wilayah */}
-                  <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                     {[
                       { arah: "Utara", icon: "north", batas: "Desa Pranggong" },
                       { arah: "Timur", icon: "east", batas: "Kab. Sragen" },
@@ -104,7 +104,7 @@ export default async function ProfilPage() {
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-outline/20 pt-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 border-t border-outline/20 pt-8">
                     <div className="col-span-2 md:col-span-1">
                       <span className="block text-xs font-medium text-outline mb-2 uppercase tracking-wider">Luas</span>
                       <span className="font-serif text-2xl font-semibold text-on-surface">295.569 <span className="text-base text-on-surface-variant font-sans font-normal">Ha</span></span>
@@ -130,19 +130,19 @@ export default async function ProfilPage() {
             {/* Right Column: Dusun */}
             <div className="lg:col-span-5 relative mt-8 lg:mt-0 z-20">
               <AnimateIn delay={0.2} direction="left" className="h-full">
-                <div className="bg-surface-container-lowest rounded-3xl p-8 md:p-10 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] border border-outline/20 relative overflow-hidden group hover:border-primary/30 transition-colors duration-500 h-full">
+                <div className="bg-surface-container-lowest rounded-3xl p-4 md:p-8 md:p-4 md:p-10 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] border border-outline/20 relative overflow-hidden group hover:border-primary/30 transition-colors duration-500 h-full">
                   <div className="absolute top-0 right-0 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4"></div>
                   <div className="relative z-10">
                     <p className="text-xs font-medium text-secondary tracking-widest uppercase mb-4">Struktur Wilayah</p>
                     
                     <div className="flex gap-8 mb-8 pb-8 border-b border-outline/20">
                       <div>
-                        <span className="block text-4xl font-serif font-bold text-on-surface mb-1">20</span>
+                        <span className="block text-2xl md:text-4xl font-serif font-bold text-on-surface mb-1">20</span>
                         <span className="text-xs text-on-surface-variant font-medium uppercase tracking-wider">Rukun Tetangga (RT)</span>
                       </div>
                       <div className="w-px h-16 bg-outline/20"></div>
                       <div>
-                        <span className="block text-4xl font-serif font-bold text-on-surface mb-1">4</span>
+                        <span className="block text-2xl md:text-4xl font-serif font-bold text-on-surface mb-1">4</span>
                         <span className="text-xs text-on-surface-variant font-medium uppercase tracking-wider">Rukun Warga (RW)</span>
                       </div>
                     </div>
@@ -173,13 +173,13 @@ export default async function ProfilPage() {
           <div className="mt-12 lg:mt-16">
             <AnimateIn delay={0.3} direction="up">
               <h3 className="font-serif text-2xl font-semibold text-on-surface mb-6 flex items-center justify-center gap-3">
-                <Icon name="map" className="text-primary text-3xl" />
+                <Icon name="map" className="text-primary text-2xl md:text-3xl" />
                 Peta Lokasi Balai Desa
               </h3>
               <div className="w-full h-[350px] md:h-[450px] rounded-3xl overflow-hidden border border-outline/20 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] relative group">
                 <div className="absolute inset-0 bg-surface-container flex items-center justify-center -z-10">
                   <span className="flex flex-col items-center text-outline gap-2">
-                    <Icon name="satellite_alt" className="text-3xl animate-pulse" />
+                    <Icon name="satellite_alt" className="text-2xl md:text-3xl animate-pulse" />
                     <span className="text-xs font-medium uppercase tracking-wider">Memuat Peta...</span>
                   </span>
                 </div>
@@ -202,11 +202,11 @@ export default async function ProfilPage() {
       {/* 3. Visi & Misi */}
       <section className="py-16 md:py-24 bg-surface-container-low relative overflow-hidden">
         <div className="absolute inset-0 z-0 bg-[radial-gradient(#707a6c_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.03] pointer-events-none" />
-        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div className="w-full max-w-7xl mx-auto px-6 relative z-10">
           <AnimateIn delay={0.1} direction="up">
             <div className="text-center mb-12">
               <p className="text-xs font-medium text-primary tracking-[0.2em] uppercase mb-4">Arah Pembangunan</p>
-              <h2 className="font-serif text-4xl font-semibold text-on-surface">Visi <span className="italic font-light text-on-surface-variant">&amp;</span> Misi</h2>
+              <h2 className="font-serif text-2xl md:text-4xl font-semibold text-on-surface">Visi <span className="italic font-light text-on-surface-variant">&amp;</span> Misi</h2>
             </div>
           </AnimateIn>
 
@@ -214,7 +214,7 @@ export default async function ProfilPage() {
             {/* Visi */}
             <div className="lg:col-span-5">
               <AnimateIn delay={0.2} direction="right" className="h-full">
-                <div className="bg-surface-container-lowest rounded-3xl p-8 md:p-10 border border-outline/20 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] h-full relative overflow-hidden">
+                <div className="bg-surface-container-lowest rounded-3xl p-4 md:p-8 md:p-4 md:p-10 border border-outline/20 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] h-full relative overflow-hidden">
                   <div className="absolute -top-20 -right-20 w-48 h-48 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
                   <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-6">
@@ -234,7 +234,7 @@ export default async function ProfilPage() {
             {/* Misi */}
             <div className="lg:col-span-7">
               <AnimateIn delay={0.3} direction="left" className="h-full">
-                <div className="bg-surface-container-lowest rounded-3xl p-8 md:p-10 border border-outline/20 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] h-full">
+                <div className="bg-surface-container-lowest rounded-3xl p-4 md:p-8 md:p-4 md:p-10 border border-outline/20 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] h-full">
                   <div className="flex items-center gap-3 mb-6">
                     <span className="flex items-center justify-center w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container">
                       <Icon name="flag" />
@@ -266,14 +266,14 @@ export default async function ProfilPage() {
 
       {/* 4. Sejarah Desa */}
       <section className="py-16 md:py-32 bg-surface relative">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             
             {/* Sejarah (Editorial Story) */}
             <div className="lg:col-span-7 flex flex-col justify-center">
               <AnimateIn delay={0.1} direction="right">
                 <p className="text-xs font-medium text-primary tracking-[0.2em] uppercase mb-6">Warisan Leluhur</p>
-                <h2 className="font-serif text-4xl font-semibold text-on-surface mb-10 leading-tight">
+                <h2 className="font-serif text-2xl md:text-4xl font-semibold text-on-surface mb-10 leading-tight">
                   Jejak Sejarah <span className="italic text-on-surface-variant font-light">Desa</span>
                 </h2>
                 <div className="text-base text-on-surface-variant space-y-6 mb-10">
@@ -299,10 +299,10 @@ export default async function ProfilPage() {
             {/* Tabel Kepala Desa */}
             <div className="lg:col-span-5">
               <AnimateIn delay={0.2} direction="left" className="h-full">
-                <div className="bg-surface-container-lowest rounded-3xl p-8 md:p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-outline/20 h-full flex flex-col">
+                <div className="bg-surface-container-lowest rounded-3xl p-4 md:p-8 md:p-4 md:p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-outline/20 h-full flex flex-col">
                   <div className="flex items-center justify-between mb-8">
                     <h3 className="font-serif text-2xl font-semibold text-on-surface">Kepala Desa</h3>
-                    <Icon name="history" className="text-secondary text-3xl" />
+                    <Icon name="history" className="text-secondary text-2xl md:text-3xl" />
                   </div>
                   <div className="space-y-0 flex-grow">
                     {KEPALA_DESA.map((kd, idx) => (
@@ -330,54 +330,54 @@ export default async function ProfilPage() {
 
       {/* 5. Demografi (Dinamis dari Database) */}
       <section className="py-16 md:py-32 bg-surface-container-low relative">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <AnimateIn delay={0.1} direction="up">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-xs font-medium text-secondary tracking-[0.2em] uppercase mb-4">Data Kependudukan</p>
-              <h2 className="font-serif text-4xl font-semibold text-on-surface mb-4">Demografi <span className="italic font-light text-on-surface-variant">Penduduk</span></h2>
+              <h2 className="font-serif text-2xl md:text-4xl font-semibold text-on-surface mb-4">Demografi <span className="italic font-light text-on-surface-variant">Penduduk</span></h2>
               <p className="text-lg text-on-surface-variant">Data statistik penduduk yang selalu diperbarui secara berkala oleh pemerintah desa.</p>
             </div>
           </AnimateIn>
 
           {/* Top Stats: Total Penduduk, KK, L/P */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <AnimateIn delay={0.15} direction="up" className="col-span-2 md:col-span-1">
-              <div className="bg-surface-container-lowest rounded-2xl p-6 border border-outline/20 shadow-sm text-center hover:shadow-md transition-shadow">
-                <Icon name="groups" className="text-primary text-3xl mb-3" />
+              <div className="bg-surface-container-lowest rounded-2xl p-4 md:p-6 border border-outline/20 shadow-sm text-center hover:shadow-md transition-shadow">
+                <Icon name="groups" className="text-primary text-2xl md:text-3xl mb-3" />
                 <p className="text-xs font-medium text-outline uppercase tracking-wider mb-1">Total Penduduk</p>
-                <span className="font-serif text-3xl font-bold text-primary">{totalPenduduk.toLocaleString('id-ID')}</span>
+                <span className="font-serif text-2xl md:text-3xl font-bold text-primary">{totalPenduduk.toLocaleString('id-ID')}</span>
                 <span className="text-sm text-on-surface-variant ml-1">Jiwa</span>
               </div>
             </AnimateIn>
             <AnimateIn delay={0.2} direction="up" className="col-span-2 md:col-span-1">
-              <div className="bg-surface-container-lowest rounded-2xl p-6 border border-outline/20 shadow-sm text-center hover:shadow-md transition-shadow">
-                <Icon name="family_restroom" className="text-secondary text-3xl mb-3" />
+              <div className="bg-surface-container-lowest rounded-2xl p-4 md:p-6 border border-outline/20 shadow-sm text-center hover:shadow-md transition-shadow">
+                <Icon name="family_restroom" className="text-secondary text-2xl md:text-3xl mb-3" />
                 <p className="text-xs font-medium text-outline uppercase tracking-wider mb-1">Kepala Keluarga</p>
-                <span className="font-serif text-3xl font-bold text-on-surface">{totalKK.toLocaleString('id-ID')}</span>
+                <span className="font-serif text-2xl md:text-3xl font-bold text-on-surface">{totalKK.toLocaleString('id-ID')}</span>
                 <span className="text-sm text-on-surface-variant ml-1">KK</span>
               </div>
             </AnimateIn>
             <AnimateIn delay={0.25} direction="up">
-              <div className="bg-surface-container-lowest rounded-2xl p-6 border border-outline/20 shadow-sm text-center hover:shadow-md transition-shadow">
-                <Icon name="male" className="text-blue-500 text-3xl mb-3" />
+              <div className="bg-surface-container-lowest rounded-2xl p-4 md:p-6 border border-outline/20 shadow-sm text-center hover:shadow-md transition-shadow">
+                <Icon name="male" className="text-blue-500 text-2xl md:text-3xl mb-3" />
                 <p className="text-xs font-medium text-outline uppercase tracking-wider mb-1">Laki-laki</p>
-                <span className="font-serif text-3xl font-bold text-on-surface">{lakiLaki.toLocaleString('id-ID')}</span>
+                <span className="font-serif text-2xl md:text-3xl font-bold text-on-surface">{lakiLaki.toLocaleString('id-ID')}</span>
               </div>
             </AnimateIn>
             <AnimateIn delay={0.3} direction="up">
-              <div className="bg-surface-container-lowest rounded-2xl p-6 border border-outline/20 shadow-sm text-center hover:shadow-md transition-shadow">
-                <Icon name="female" className="text-pink-500 text-3xl mb-3" />
+              <div className="bg-surface-container-lowest rounded-2xl p-4 md:p-6 border border-outline/20 shadow-sm text-center hover:shadow-md transition-shadow">
+                <Icon name="female" className="text-pink-500 text-2xl md:text-3xl mb-3" />
                 <p className="text-xs font-medium text-outline uppercase tracking-wider mb-1">Perempuan</p>
-                <span className="font-serif text-3xl font-bold text-on-surface">{perempuan.toLocaleString('id-ID')}</span>
+                <span className="font-serif text-2xl md:text-3xl font-bold text-on-surface">{perempuan.toLocaleString('id-ID')}</span>
               </div>
             </AnimateIn>
           </div>
 
           {/* Detail Grid: Agama, Pendidikan, Pekerjaan */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Agama */}
             <AnimateIn delay={0.1} direction="up" className="h-full">
-              <div className="bg-surface-container-lowest rounded-2xl p-8 border border-outline/20 shadow-sm h-full hover:shadow-md transition-shadow">
+              <div className="bg-surface-container-lowest rounded-2xl p-4 md:p-8 border border-outline/20 shadow-sm h-full hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-primary-container/30 text-primary">
                     <Icon name="mosque" />
@@ -397,7 +397,7 @@ export default async function ProfilPage() {
 
             {/* Pendidikan */}
             <AnimateIn delay={0.2} direction="up" className="h-full">
-              <div className="bg-surface-container-lowest rounded-2xl p-8 border border-outline/20 shadow-sm h-full hover:shadow-md transition-shadow">
+              <div className="bg-surface-container-lowest rounded-2xl p-4 md:p-8 border border-outline/20 shadow-sm h-full hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-secondary-container/30 text-secondary">
                     <Icon name="school" />
@@ -417,7 +417,7 @@ export default async function ProfilPage() {
 
             {/* Pekerjaan */}
             <AnimateIn delay={0.3} direction="up" className="h-full">
-              <div className="bg-surface-container-lowest rounded-2xl p-8 border border-outline/20 shadow-sm h-full hover:shadow-md transition-shadow">
+              <div className="bg-surface-container-lowest rounded-2xl p-4 md:p-8 border border-outline/20 shadow-sm h-full hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="flex items-center justify-center w-10 h-10 rounded-xl bg-tertiary-container/30 text-tertiary">
                     <Icon name="work" />
@@ -443,11 +443,11 @@ export default async function ProfilPage() {
 
       {/* 6. Sosial & Ekonomi */}
       <section className="py-16 md:py-32 bg-surface">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <AnimateIn delay={0.1} direction="up">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <p className="text-xs font-medium text-secondary tracking-[0.2em] uppercase mb-4">Pembangunan &amp; Kesejahteraan</p>
-              <h2 className="font-serif text-4xl font-semibold text-on-surface mb-6">Sosial <span className="italic font-light text-on-surface-variant">&amp;</span> Ekonomi</h2>
+              <h2 className="font-serif text-2xl md:text-4xl font-semibold text-on-surface mb-6">Sosial <span className="italic font-light text-on-surface-variant">&amp;</span> Ekonomi</h2>
               <p className="text-lg text-on-surface-variant">Membangun kesejahteraan melalui pemberdayaan masyarakat dan pengelolaan sumber daya desa yang transparan.</p>
             </div>
           </AnimateIn>
@@ -456,9 +456,9 @@ export default async function ProfilPage() {
             {/* Basis Ekonomi */}
             <div className="md:col-span-12 lg:col-span-8">
               <AnimateIn delay={0.1} direction="right" className="h-full">
-                <div className="bg-surface-container-lowest rounded-3xl p-8 md:p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-outline/20 flex flex-col sm:flex-row gap-8 items-center bg-gradient-to-br from-surface-container-lowest to-surface h-full">
+                <div className="bg-surface-container-lowest rounded-3xl p-4 md:p-8 md:p-4 md:p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-outline/20 flex flex-col sm:flex-col md:flex-row gap-8 items-center bg-gradient-to-br from-surface-container-lowest to-surface h-full">
                   <div className="w-24 h-24 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center shrink-0">
-                    <Icon name="agriculture" className="text-4xl" />
+                    <Icon name="agriculture" className="text-2xl md:text-4xl" />
                   </div>
                   <div>
                     <h3 className="font-serif text-2xl font-semibold text-on-surface mb-4">Basis Ekonomi Utama</h3>
@@ -483,7 +483,7 @@ export default async function ProfilPage() {
             {/* Kesejahteraan */}
             <div className="md:col-span-6 lg:col-span-4">
               <AnimateIn delay={0.2} direction="left" className="h-full">
-                <div className="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-outline/20 h-full">
+                <div className="bg-surface-container-lowest rounded-3xl p-4 md:p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-outline/20 h-full">
                   <div className="flex items-center space-x-4 mb-8">
                     <span className="flex items-center justify-center w-12 h-12 rounded-full bg-primary-container text-on-primary-container">
                       <Icon name="account_balance_wallet" />
@@ -508,22 +508,22 @@ export default async function ProfilPage() {
             {/* Ketenagakerjaan */}
             <div className="md:col-span-6 lg:col-span-6">
               <AnimateIn delay={0.25} direction="up" className="h-full">
-                <div className="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-outline/20 h-full">
+                <div className="bg-surface-container-lowest rounded-3xl p-4 md:p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] border border-outline/20 h-full">
                   <div className="flex items-center space-x-4 mb-6">
                     <span className="flex items-center justify-center w-12 h-12 rounded-full bg-tertiary-container text-on-tertiary-container">
                       <Icon name="engineering" />
                     </span>
                     <h3 className="font-serif text-xl font-semibold text-on-surface">Ketenagakerjaan</h3>
                   </div>
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="bg-surface-container/30 rounded-xl p-5 text-center">
                       <p className="text-xs font-medium text-outline uppercase tracking-wider mb-2">Angkatan Kerja</p>
-                      <span className="font-serif text-3xl font-bold text-on-surface">{angkatanKerja.toLocaleString('id-ID')}</span>
+                      <span className="font-serif text-2xl md:text-3xl font-bold text-on-surface">{angkatanKerja.toLocaleString('id-ID')}</span>
                       <p className="text-xs text-on-surface-variant mt-1">Usia 15–55 Tahun</p>
                     </div>
                     <div className="bg-surface-container/30 rounded-xl p-5 text-center">
                       <p className="text-xs font-medium text-outline uppercase tracking-wider mb-2">Belum Bekerja</p>
-                      <span className="font-serif text-3xl font-bold text-on-surface">{pengangguran.toLocaleString('id-ID')}</span>
+                      <span className="font-serif text-2xl md:text-3xl font-bold text-on-surface">{pengangguran.toLocaleString('id-ID')}</span>
                       <p className="text-xs text-on-surface-variant mt-1">Orang</p>
                     </div>
                   </div>
@@ -534,7 +534,7 @@ export default async function ProfilPage() {
             {/* Kelembagaan */}
             <div className="md:col-span-12 lg:col-span-6">
               <AnimateIn delay={0.3} direction="up" className="h-full">
-                <div className="bg-secondary-container/10 rounded-3xl p-8 md:p-10 border border-secondary/20 h-full">
+                <div className="bg-secondary-container/10 rounded-3xl p-4 md:p-8 md:p-4 md:p-10 border border-secondary/20 h-full">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div>
                       <div className="flex items-center space-x-4 mb-4">
@@ -562,8 +562,8 @@ export default async function ProfilPage() {
 
       {/* 7. Sarana & Prasarana */}
       <section className="py-16 md:py-32 bg-surface-container-low">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="bg-surface rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] border border-outline/20">
+        <div className="w-full max-w-7xl mx-auto px-6">
+          <div className="bg-surface rounded-[2.5rem] p-4 md:p-10 md:p-16 relative overflow-hidden shadow-[0_20px_40px_-10px_rgba(0,0,0,0.08)] border border-outline/20">
             <div className="absolute -top-40 -right-40 w-96 h-96 bg-primary-container/30 rounded-full blur-[80px] pointer-events-none"></div>
             <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-secondary-container/30 rounded-full blur-[80px] pointer-events-none"></div>
             
@@ -572,7 +572,7 @@ export default async function ProfilPage() {
                 <div className="max-w-2xl">
                   <AnimateIn delay={0.1} direction="right">
                     <p className="text-xs font-medium text-outline tracking-[0.2em] uppercase mb-4">Infrastruktur</p>
-                    <h2 className="font-serif text-4xl font-semibold text-on-surface mb-4">Sarana <span className="italic font-light text-on-surface-variant">&amp;</span> Prasarana</h2>
+                    <h2 className="font-serif text-2xl md:text-4xl font-semibold text-on-surface mb-4">Sarana <span className="italic font-light text-on-surface-variant">&amp;</span> Prasarana</h2>
                     <p className="text-lg text-on-surface-variant leading-relaxed">Fasilitas umum pendukung kualitas hidup masyarakat yang dibangun dan dirawat dengan semangat <strong className="text-on-surface font-semibold">swadaya dan gotong royong</strong>.</p>
                   </AnimateIn>
                 </div>
@@ -584,10 +584,10 @@ export default async function ProfilPage() {
                 </AnimateIn>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Pendidikan */}
                 <AnimateIn delay={0.3} direction="up" className="h-full">
-                  <div className="bg-surface/50 backdrop-blur-md p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition-shadow h-full">
+                  <div className="bg-surface/50 backdrop-blur-md p-4 md:p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition-shadow h-full">
                     <div className="w-12 h-12 rounded-xl bg-surface shadow-sm border border-outline/20 flex items-center justify-center mb-6">
                       <Icon name="school" className="text-primary" />
                     </div>
@@ -605,7 +605,7 @@ export default async function ProfilPage() {
 
                 {/* Kesehatan */}
                 <AnimateIn delay={0.4} direction="up" className="h-full">
-                  <div className="bg-surface/50 backdrop-blur-md p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition-shadow h-full">
+                  <div className="bg-surface/50 backdrop-blur-md p-4 md:p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition-shadow h-full">
                     <div className="w-12 h-12 rounded-xl bg-surface shadow-sm border border-outline/20 flex items-center justify-center mb-6">
                       <Icon name="health_and_safety" className="text-secondary" />
                     </div>
@@ -623,7 +623,7 @@ export default async function ProfilPage() {
 
                 {/* Fasilitas Umum */}
                 <AnimateIn delay={0.5} direction="up" className="h-full">
-                  <div className="bg-surface/50 backdrop-blur-md p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition-shadow h-full">
+                  <div className="bg-surface/50 backdrop-blur-md p-4 md:p-8 rounded-2xl border border-white/50 shadow-sm hover:shadow-md transition-shadow h-full">
                     <div className="w-12 h-12 rounded-xl bg-surface shadow-sm border border-outline/20 flex items-center justify-center mb-6">
                       <Icon name="mosque" className="text-tertiary" />
                     </div>

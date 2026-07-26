@@ -9,7 +9,7 @@ const adminMenu = [
   { name: "Dashboard", path: "/admin", icon: "dashboard" },
   { name: "Statistik & Fasilitas", path: "/admin/penduduk", icon: "insert_chart" },
   { name: "Berita & Kegiatan", path: "/admin/berita", icon: "newspaper" },
-  { name: "UMKM Syariah", path: "/admin/umkm", icon: "storefront" },
+  { name: "UMKM", path: "/admin/umkm", icon: "storefront" },
   { name: "Perangkat Desa", path: "/admin/perangkat", icon: "badge" },
   { name: "Layanan Publik", path: "/admin/layanan", icon: "support_agent" },
   { name: "JDIH (Peraturan)", path: "/admin/peraturan-desa", icon: "gavel" },
@@ -40,9 +40,7 @@ export default function AdminSidebar({
     <>
       {/* Mobile Toggle Button */}
       <div className="md:hidden fixed top-4 left-4 z-40">
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="w-10 h-10 bg-white border border-outline-variant/30 rounded-xl flex items-center justify-center shadow-md text-on-surface-variant hover:text-primary"
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="min-h-[44px] py-2 px-4 w-10 h-10 bg-white border border-outline-variant/30 rounded-xl flex items-center justify-center shadow-md text-on-surface-variant hover:text-primary"
         >
           <Icon name={mobileOpen ? "close" : "menu"} className="text-xl" />
         </button>

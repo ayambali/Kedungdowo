@@ -81,9 +81,9 @@ export default function AdminCharts({ agamaStats = [], totalPenduduk = 3368 }: A
   });
 
   return (
-    <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-12">
+    <div className="grid grid-cols-1 xl:grid-cols-1 md:grid-cols-2 gap-8 mb-12">
       {/* 1. Area Chart: Population */}
-      <div className="bg-white rounded-3xl p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-outline-variant/20 flex flex-col">
+      <div className="bg-white rounded-3xl p-4 md:p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-outline-variant/20 flex flex-col">
         <div className="flex justify-between items-start mb-6">
           <div>
             <h3 className="text-lg font-serif font-bold text-on-surface mb-1">Dinamika Penduduk</h3>
@@ -173,7 +173,7 @@ export default function AdminCharts({ agamaStats = [], totalPenduduk = 3368 }: A
       </div>
 
       {/* 2. Donut Chart: Services */}
-      <div className="bg-white rounded-3xl p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-outline-variant/20 flex flex-col">
+      <div className="bg-white rounded-3xl p-4 md:p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-outline-variant/20 flex flex-col">
         <div className="flex justify-between items-start mb-6">
           <div>
             <h3 className="text-lg font-serif font-bold text-on-surface mb-1">Distribusi Agama</h3>

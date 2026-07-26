@@ -34,10 +34,10 @@ export default async function AdminPeraturanPage({
   };
 
   return (
-    <div className="p-6 md:p-10 max-w-7xl mx-auto space-y-10">
+    <div className="p-4 md:p-6 md:p-4 md:p-10 max-w-7xl mx-auto space-y-10">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-serif font-bold text-on-surface">JDIH / Peraturan Desa</h1>
+          <h1 className="text-2xl md:text-3xl font-serif font-bold text-on-surface">JDIH / Peraturan Desa</h1>
           <p className="text-on-surface-variant mt-1 text-sm md:text-base">
             Kelola dokumen peraturan, keputusan, dan arsip hukum desa
           </p>
@@ -49,7 +49,7 @@ export default async function AdminPeraturanPage({
 
       {/* Table Section */}
       <div className="bg-white rounded-3xl shadow-sm border border-outline-variant/20 overflow-hidden">
-        <div className="p-6 md:px-8 md:py-6 border-b border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="p-4 md:p-6 md:px-8 md:py-6 border-b border-outline-variant/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <h2 className="text-lg font-bold text-on-surface">Daftar Dokumen Hukum</h2>
           <div className="flex flex-col md:flex-row md:items-center gap-3">
             <form method="GET" action="/admin/peraturan-desa" className="relative">
@@ -84,7 +84,7 @@ export default async function AdminPeraturanPage({
               {peraturanList.length === 0 ? (
                 <tr>
                   <td colSpan={4} className="px-6 py-12 text-center text-on-surface-variant">
-                    <Icon name="folder_off" className="text-4xl opacity-50 mb-2" />
+                    <Icon name="folder_off" className="text-2xl md:text-4xl opacity-50 mb-2" />
                     <p>Belum ada dokumen peraturan yang diunggah.</p>
                   </td>
                 </tr>

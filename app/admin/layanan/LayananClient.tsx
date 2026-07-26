@@ -121,7 +121,7 @@ export default function LayananClient({
   return (
     <div className="space-y-6">
       {/* Statistik Ringkas */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <div className="bg-white rounded-2xl p-5 border border-outline-variant/20 shadow-sm">
           <div className="flex items-center gap-3 mb-2">
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -131,7 +131,7 @@ export default function LayananClient({
               Total Masuk
             </span>
           </div>
-          <p className="font-serif text-3xl font-bold text-on-surface">
+          <p className="font-serif text-2xl md:text-3xl font-bold text-on-surface">
             {data.length}
           </p>
         </div>
@@ -144,7 +144,7 @@ export default function LayananClient({
               Belum Direspon
             </span>
           </div>
-          <p className="font-serif text-3xl font-bold text-orange-500">
+          <p className="font-serif text-2xl md:text-3xl font-bold text-orange-500">
             {countBelum}
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function LayananClient({
               Sudah Direspon
             </span>
           </div>
-          <p className="font-serif text-3xl font-bold text-primary">
+          <p className="font-serif text-2xl md:text-3xl font-bold text-primary">
             {countSudah}
           </p>
         </div>
@@ -183,7 +183,7 @@ export default function LayananClient({
       {/* Tabel Data */}
       {filtered.length === 0 ? (
         <div className="bg-white rounded-2xl border border-outline-variant/20 p-16 text-center">
-          <Icon name="inbox" className="text-5xl text-outline/30 mb-4" />
+          <Icon name="inbox" className="text-3xl md:text-5xl text-outline/30 mb-4" />
           <p className="text-sm text-on-surface-variant">
             Tidak ada data untuk filter ini.
           </p>
@@ -270,9 +270,7 @@ export default function LayananClient({
                       <td className="py-4 px-5 align-top">
                         <div className="flex items-center justify-center gap-1.5 flex-wrap">
                           {/* Tombol Detail/Balas */}
-                          <button
-                            onClick={() => openModal(item)}
-                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all text-xs font-semibold"
+                          <button onClick={() => openModal(item)} className="min-h-[44px] py-2 px-4 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all text-xs font-semibold"
                             title="Detail & Balas"
                           >
                             <Icon name="visibility" className="text-[14px]" /> Detail
@@ -289,18 +287,14 @@ export default function LayananClient({
                               >
                                 <Icon name="check" className="text-base" />
                               </button>
-                              <button
-                                onClick={() => setDeleteConfirmId(null)}
-                                className="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all"
+                              <button onClick={() => setDeleteConfirmId(null)} className="min-h-[44px] py-2 px-4 w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all"
                                 title="Batal"
                               >
                                 <Icon name="close" className="text-base" />
                               </button>
                             </div>
                           ) : (
-                            <button
-                              onClick={() => setDeleteConfirmId(item.id)}
-                              className="w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-error/10 hover:text-error transition-all"
+                            <button onClick={() => setDeleteConfirmId(item.id)} className="min-h-[44px] py-2 px-4 w-8 h-8 flex items-center justify-center rounded-lg bg-surface-container text-on-surface-variant hover:bg-error/10 hover:text-error transition-all"
                               title="Hapus"
                             >
                               <Icon name="delete" className="text-base" />
@@ -373,9 +367,7 @@ export default function LayananClient({
 
                   {/* Aksi Mobile */}
                   <div className="flex items-center gap-2 pt-2 border-t border-outline-variant/10">
-                    <button
-                      onClick={() => openModal(item)}
-                      className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl text-xs font-semibold bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all"
+                    <button onClick={() => openModal(item)} className="min-h-[44px] py-2 px-4 flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl text-xs font-semibold bg-blue-50 text-blue-600 hover:bg-blue-100 transition-all"
                     >
                       <Icon name="visibility" className="text-sm" /> Detail / Balas
                     </button>
@@ -450,19 +442,17 @@ export default function LayananClient({
               <h3 className="font-serif text-xl font-bold text-on-surface flex items-center gap-2">
                 <Icon name="info" className="text-primary" /> Detail Permohonan
               </h3>
-              <button 
-                onClick={() => setSelectedItem(null)}
-                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container text-on-surface-variant transition-colors"
+              <button onClick={() => setSelectedItem(null)} className="min-h-[44px] py-2 px-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container text-on-surface-variant transition-colors"
               >
                 <Icon name="close" className="text-xl" />
               </button>
             </div>
 
             {/* Body Modal (Scrollable) */}
-            <div className="p-6 overflow-y-auto space-y-6 bg-surface-container-lowest flex-1">
+            <div className="p-4 md:p-6 overflow-y-auto space-y-6 bg-surface-container-lowest flex-1">
               {/* Info Pengaju */}
               <div className="bg-surface-container/30 rounded-2xl p-5 border border-outline-variant/20">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-wider text-outline mb-1">Nama Pemohon</p>
                     <p className="font-medium text-on-surface">{selectedItem.namaPemohon}</p>
@@ -511,9 +501,7 @@ export default function LayananClient({
                     <Icon name="reply" className="text-[14px]" /> Tanggapan Admin
                   </p>
                   {!isEditingReply && selectedItem.tanggapan && (
-                    <button 
-                      onClick={() => setIsEditingReply(true)}
-                      className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
+                    <button onClick={() => setIsEditingReply(true)} className="min-h-[44px] py-2 px-4 text-xs font-semibold text-primary hover:underline flex items-center gap-1"
                     >
                       <Icon name="edit" className="text-[14px]" /> Edit Tanggapan
                     </button>
@@ -580,9 +568,7 @@ export default function LayananClient({
                     </button>
                   </>
                 ) : (
-                  <button
-                    onClick={() => setSelectedItem(null)}
-                    className="px-6 py-2 rounded-xl text-sm font-semibold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors"
+                  <button onClick={() => setSelectedItem(null)} className="min-h-[44px] py-2 px-4 px-6 py-2 rounded-xl text-sm font-semibold bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors"
                   >
                     Tutup
                   </button>

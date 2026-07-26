@@ -68,9 +68,7 @@ export default function ChatBotDesa() {
                   <p className="text-xs text-gray-400">Siap membantu Anda</p>
                 </div>
               </div>
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
+              <button onClick={() => setIsOpen(false)} className="min-h-[44px] py-2 px-4 w-8 h-8 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors"
               >
                 <Icon name="close" className="text-xl" />
               </button>
@@ -80,7 +78,7 @@ export default function ChatBotDesa() {
             <div className="flex-1 overflow-y-auto p-5 bg-gray-50 flex flex-col gap-4 custom-scrollbar">
               {messages.length === 0 && (
                 <div className="text-center text-gray-500 text-sm my-auto px-4">
-                  <Icon name="waving_hand" className="text-4xl mb-3 text-gray-300" />
+                  <Icon name="waving_hand" className="text-2xl md:text-4xl mb-3 text-gray-300" />
                   <p>Halo! Selamat datang di layanan informasi Desa Kedungdowo. Ada yang bisa saya bantu?</p>
                 </div>
               )}

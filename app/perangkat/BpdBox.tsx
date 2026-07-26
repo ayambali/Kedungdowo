@@ -31,7 +31,7 @@ export default function BpdBox({ bpdMembers }: { bpdMembers: any[] }) {
         {member?.fotoUrl ? (
           <img src={member.fotoUrl} alt={member?.nama || title} className="w-full h-full object-cover" />
         ) : (
-          <span className="material-symbols-outlined text-5xl text-on-surface-variant/30" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
+          <span className="material-symbols-outlined text-3xl md:text-5xl text-on-surface-variant/30" style={{ fontVariationSettings: "'FILL' 1" }}>person</span>
         )}
       </div>
       <div className="bg-[#1E5B94] text-white text-[10px] font-bold uppercase tracking-widest py-1.5">
@@ -51,7 +51,7 @@ export default function BpdBox({ bpdMembers }: { bpdMembers: any[] }) {
         onClick={() => setIsOpen(true)}
       >
         <div className="absolute inset-0 bg-[#1E5B94]/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-        <span className="text-[#1E5B94] font-bold text-3xl tracking-widest relative z-10 group-hover:scale-110 transition-transform">BPD</span>
+        <span className="text-[#1E5B94] font-bold text-2xl md:text-3xl tracking-widest relative z-10 group-hover:scale-110 transition-transform">BPD</span>
         <span className="text-xs font-medium text-[#1E5B94] mt-2 relative z-10 flex items-center gap-1 opacity-80 group-hover:opacity-100 transition-opacity">
           Lihat Anggota <Icon name="touch_app" className="text-[14px]" />
         </span>
@@ -66,7 +66,7 @@ export default function BpdBox({ bpdMembers }: { bpdMembers: any[] }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 md:p-6 overflow-hidden"
+              className="fixed inset-0 z-[9999] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 md:p-4 md:p-6 overflow-hidden"
               onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false); }}
             >
               <motion.div 
@@ -86,19 +86,17 @@ export default function BpdBox({ bpdMembers }: { bpdMembers: any[] }) {
                       Struktur Keanggotaan BPD
                     </p>
                   </div>
-                  <button 
-                    onClick={() => setIsOpen(false)} 
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition-colors text-white cursor-pointer"
+                  <button onClick={() => setIsOpen(false)} className="min-h-[44px] py-2 px-4 w-10 h-10 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/30 transition-colors text-white cursor-pointer"
                   >
                     <Icon name="close" />
                   </button>
                 </div>
 
                 {/* Content Modal (Scrollable) */}
-                <div className="overflow-y-auto p-6 md:p-10 flex-grow bg-surface-container-lowest custom-scrollbar">
+                <div className="overflow-y-auto p-4 md:p-6 md:p-4 md:p-10 flex-grow bg-surface-container-lowest custom-scrollbar">
                   {bpdMembers.length === 0 ? (
                     <div className="text-center py-20 text-on-surface-variant">
-                      <Icon name="info" className="text-5xl mb-3 opacity-40" />
+                      <Icon name="info" className="text-3xl md:text-5xl mb-3 opacity-40" />
                       <p className="font-medium text-lg">Data anggota BPD belum tersedia.</p>
                       <p className="text-sm text-on-surface-variant/60 mt-1">Silakan tambahkan data melalui halaman Admin.</p>
                     </div>
@@ -121,7 +119,7 @@ export default function BpdBox({ bpdMembers }: { bpdMembers: any[] }) {
                               Pengurus
                             </span>
                           </div>
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
+                          <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
                             {pengurus.map(({ title, member }) => (
                               <MemberCard key={title} title={title} member={member} />
                             ))}
@@ -137,7 +135,7 @@ export default function BpdBox({ bpdMembers }: { bpdMembers: any[] }) {
                               Anggota
                             </span>
                           </div>
-                          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+                          <div className="grid grid-cols-1 md:grid-cols-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
                             {anggota.map(a => (
                               <MemberCard key={a.id} title="Anggota BPD" member={a} />
                             ))}

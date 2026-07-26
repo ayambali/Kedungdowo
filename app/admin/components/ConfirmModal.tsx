@@ -56,9 +56,9 @@ export default function ConfirmModal({
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 animate-in fade-in duration-200">
       <div className="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-sm overflow-hidden flex flex-col animate-in zoom-in-95 duration-200">
-        <div className="p-6 flex flex-col items-center text-center">
+        <div className="p-4 md:p-6 flex flex-col items-center text-center">
           <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${getIconBgClass()}`}>
-            <Icon name={getIcon()} className="text-3xl" />
+            <Icon name={getIcon()} className="text-2xl md:text-3xl" />
           </div>
           <h3 className="font-serif text-xl font-bold text-on-background mb-2">{title}</h3>
           <p className="text-on-surface-variant text-sm leading-relaxed">{message}</p>

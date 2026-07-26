@@ -192,8 +192,8 @@ export default function UmkmClient({ initialData }: { initialData: any[] }) {
 
   return (
     <>
-      <div className="mb-6 flex justify-between items-center bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 shadow-sm">
-        <div className="relative w-64">
+      <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 shadow-sm">
+        <div className="relative w-full md:w-64">
           <Icon name="search" className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50" />
           <input 
             type="text" 
@@ -206,15 +206,13 @@ export default function UmkmClient({ initialData }: { initialData: any[] }) {
             className="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-primary"
           />
         </div>
-        <button 
-          onClick={handleOpenNew}
-          className="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-surface-tint transition-colors shadow-sm"
+        <button onClick={handleOpenNew} className="min-h-[44px] py-2 px-4 bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-surface-tint transition-colors shadow-sm"
         >
           <Icon name="add" className="text-lg" /> Tambah UMKM
         </button>
       </div>
 
-      <div className="bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm overflow-hidden">
+      <div className="bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm overflow-hidden overflow-x-auto whitespace-nowrap scrollbar-hide">
         <table className="w-full text-left text-sm text-on-surface">
           <thead className="bg-surface-container-low text-on-surface-variant border-b border-outline-variant/20">
             <tr>
@@ -257,10 +255,10 @@ export default function UmkmClient({ initialData }: { initialData: any[] }) {
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex justify-end gap-2">
-                      <button onClick={() => handleOpenEdit(item)} className="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded-md transition-colors">
+                      <button onClick={() => handleOpenEdit(item)} className="min-h-[44px] py-2 px-4 p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded-md transition-colors">
                         <Icon name="edit" className="text-lg" />
                       </button>
-                      <button onClick={() => confirmDelete(item.id)} className="p-1.5 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-md transition-colors">
+                      <button onClick={() => confirmDelete(item.id)} className="min-h-[44px] py-2 px-4 p-1.5 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-md transition-colors">
                         <Icon name="delete" className="text-lg" />
                       </button>
                     </div>
@@ -274,7 +272,7 @@ export default function UmkmClient({ initialData }: { initialData: any[] }) {
 
       {/* Pagination Footer */}
       {data.length > 0 && (
-        <div className="mt-6 flex flex-col sm:flex-row justify-between items-center bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 shadow-sm gap-4 text-xs font-semibold text-on-surface-variant">
+        <div className="mt-6 flex flex-col sm:flex-col md:flex-row justify-between items-center bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 shadow-sm gap-4 text-xs font-semibold text-on-surface-variant">
           <div>
             Menampilkan <span className="font-bold text-on-surface">{startIndex + 1}</span> - <span className="font-bold text-on-surface">{Math.min(startIndex + ITEMS_PER_PAGE, filteredData.length)}</span> dari <span className="font-bold text-on-surface">{filteredData.length}</span> UMKM
           </div>
@@ -319,14 +317,14 @@ export default function UmkmClient({ initialData }: { initialData: any[] }) {
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
           <div className="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-lg max-h-[90vh] flex flex-col overflow-hidden">
-            <div className="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+            <div className="p-4 md:p-6 border-b border-outline-variant/20 flex justify-between items-center">
               <h2 className="font-serif text-xl font-bold">{editingId ? "Edit UMKM" : "Tambah UMKM"}</h2>
-              <button onClick={() => setIsModalOpen(false)} className="text-on-surface-variant hover:bg-surface-container p-1 rounded-md">
+              <button onClick={() => setIsModalOpen(false)} className="min-h-[44px] py-2 px-4 text-on-surface-variant hover:bg-surface-container p-1 rounded-md">
                 <Icon name="close" />
               </button>
             </div>
             
-            <form onSubmit={handleSubmit} className="p-6 overflow-y-auto flex-grow flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="p-4 md:p-6 overflow-y-auto flex-grow flex flex-col gap-4">
               <div>
                 <label className="block text-sm font-semibold mb-1.5">Nama Produk</label>
                 <input required type="text" value={formData.namaProduk} onChange={(e) => setFormData({...formData, namaProduk: e.target.value})} className="w-full bg-surface-container border border-outline-variant/50 rounded-lg px-4 py-2.5 focus:border-primary focus:outline-none" />
@@ -357,7 +355,7 @@ export default function UmkmClient({ initialData }: { initialData: any[] }) {
 
               <div>
                 <label className="block text-sm font-semibold mb-1.5">Kisaran Harga (Rupiah, Angka saja)</label>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs text-on-surface-variant/70 mb-1">Harga Terendah</label>
                     <input 
@@ -400,7 +398,7 @@ export default function UmkmClient({ initialData }: { initialData: any[] }) {
                 <div className="flex flex-col gap-4 w-full">
                   {/* Photo Preview Grid */}
                   {(existingUrls.length > 0 || newFiles.length > 0) && (
-                    <div className="grid grid-cols-3 gap-3">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                       {existingUrls.map((url, idx) => (
                         <div key={`existing-${idx}`} className="relative aspect-square rounded-lg overflow-hidden border border-outline-variant/30 group shadow-sm bg-surface-container-low">
                           <img src={url} alt={`Existing preview ${idx}`} className="w-full h-full object-cover" />

@@ -14,11 +14,11 @@ export default function PotensiPage() {
     <>
       {/* Page Header - Dark */}
       <section className="bg-inverse-surface pt-28 pb-16 md:pt-32 md:pb-20">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+        <div className="w-full max-w-7xl mx-auto px-6 text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-primary/20 text-inverse-primary font-semibold text-xs uppercase tracking-[0.2em] mb-4">
             Potensi Unggulan
           </span>
-          <h1 className="font-serif text-3xl md:text-5xl text-inverse-on-surface font-bold mb-4">Desa Korporasi Sapi</h1>
+          <h1 className="font-serif text-2xl md:text-3xl md:text-3xl md:text-5xl text-inverse-on-surface font-bold mb-4">Desa Korporasi Sapi</h1>
           <p className="text-inverse-on-surface/70 text-base md:text-lg max-w-3xl mx-auto">
             Kedungdowo bersama 4 desa lainnya di Kecamatan Andong merupakan episentrum
             program Desa Korporasi Sapi (DKS) oleh Kementerian Pertanian RI.
@@ -28,11 +28,11 @@ export default function PotensiPage() {
 
       {/* Stats Grid */}
       <section className="py-16 md:py-24 bg-inverse-surface">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+        <div className="w-full max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {kttData.map((item) => (
               <div key={item.label} className="bg-white/5 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10 hover:bg-white/10 transition-all">
-                <Icon name={item.icon} filled className="text-3xl text-inverse-primary mb-2" />
+                <Icon name={item.icon} filled className="text-2xl md:text-3xl text-inverse-primary mb-2" />
                 <p className="font-serif text-xl md:text-2xl font-bold text-inverse-on-surface mb-1">{item.value}</p>
                 <p className="text-inverse-on-surface/60 text-xs">{item.label}</p>
               </div>
@@ -40,8 +40,8 @@ export default function PotensiPage() {
           </div>
 
           {/* Info Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-6 md:p-4 md:p-8 border border-white/10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center">
                   <Icon name="business" filled className="text-on-primary-container text-2xl" />
@@ -58,7 +58,7 @@ export default function PotensiPage() {
               </p>
             </div>
 
-            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-6 md:p-4 md:p-8 border border-white/10">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center">
                   <Icon name="handshake" filled className="text-on-secondary-container text-2xl" />
@@ -104,15 +104,15 @@ export default function PotensiPage() {
 
       {/* Keunggulan Komparatif */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <h2 className="font-serif text-2xl md:text-3xl text-primary font-bold mb-8 text-center">Keunggulan Komparatif</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
+          <h2 className="font-serif text-2xl md:text-2xl md:text-3xl text-primary font-bold mb-8 text-center">Keunggulan Komparatif</h2>
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               { icon: "eco", title: "Adaptasi Agroklimatologi", desc: "Tanah padas dan irigasi tadah hujan mendorong transformasi ke peternakan sapi komersial yang lebih menguntungkan." },
               { icon: "local_shipping", title: "Akses Pasar Premium", desc: "Rantai pasok daging sapi langsung ke pasar DKI Jakarta melalui Koperasi Produsen yang terorganisir." },
               { icon: "trending_up", title: "Skala Ekonomi Korporasi", desc: "Model bisnis korporasi dengan entitas hukum perseroan, bukan peternakan skala rumah tangga tradisional." },
             ].map((item) => (
-              <div key={item.title} className="bg-surface-container-lowest rounded-xl p-6 shadow-sm border border-outline-variant/20 hover:shadow-md transition-all">
+              <div key={item.title} className="bg-surface-container-lowest rounded-xl p-4 md:p-6 shadow-sm border border-outline-variant/20 hover:shadow-md transition-all">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
                   <Icon name={item.icon} filled className="text-primary text-xl" />
                 </div>

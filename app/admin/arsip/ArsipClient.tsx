@@ -141,9 +141,7 @@ export default function ArsipClient({ initialData }: { initialData: any[] }) {
             className="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-primary"
           />
         </div>
-        <button 
-          onClick={handleOpenNew}
-          className="bg-primary w-full md:w-auto text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex justify-center items-center gap-2 hover:bg-surface-tint transition-colors shadow-sm"
+        <button onClick={handleOpenNew} className="min-h-[44px] py-2 px-4 bg-primary w-full md:w-auto text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex justify-center items-center gap-2 hover:bg-surface-tint transition-colors shadow-sm"
         >
           <Icon name="add" className="text-lg" /> Tambah Arsip
         </button>
@@ -193,10 +191,10 @@ export default function ArsipClient({ initialData }: { initialData: any[] }) {
                           <Icon name="picture_as_pdf" className="text-lg" />
                         </a>
                       )}
-                      <button onClick={() => handleEdit(item)} className="p-1.5 text-on-surface-variant hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors" title="Edit">
+                      <button onClick={() => handleEdit(item)} className="min-h-[44px] py-2 px-4 p-1.5 text-on-surface-variant hover:text-orange-600 hover:bg-orange-50 rounded-md transition-colors" title="Edit">
                         <Icon name="edit" className="text-lg" />
                       </button>
-                      <button onClick={() => confirmDelete(item.id)} className="p-1.5 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-md transition-colors" title="Hapus">
+                      <button onClick={() => confirmDelete(item.id)} className="min-h-[44px] py-2 px-4 p-1.5 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-md transition-colors" title="Hapus">
                         <Icon name="delete" className="text-lg" />
                       </button>
                     </div>
@@ -210,7 +208,7 @@ export default function ArsipClient({ initialData }: { initialData: any[] }) {
 
       {/* Pagination Controls */}
       {totalPages > 1 && (
-        <div className="flex flex-col sm:flex-row justify-between items-center p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm mt-4 gap-4">
+        <div className="flex flex-col sm:flex-col md:flex-row justify-between items-center p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm mt-4 gap-4">
           <p className="text-sm text-on-surface-variant">
             Menampilkan {(currentPage - 1) * itemsPerPage + 1} - {Math.min(currentPage * itemsPerPage, filteredData.length)} dari {filteredData.length} arsip
           </p>
@@ -252,14 +250,14 @@ export default function ArsipClient({ initialData }: { initialData: any[] }) {
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
           <div className="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
-            <div className="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+            <div className="p-4 md:p-6 border-b border-outline-variant/20 flex justify-between items-center">
               <h2 className="font-serif text-xl font-bold">{formData.id ? "Edit Arsip" : "Tambahkan Arsip Baru"}</h2>
-              <button onClick={() => setIsModalOpen(false)} className="text-on-surface-variant hover:bg-surface-container p-1 rounded-md">
+              <button onClick={() => setIsModalOpen(false)} className="min-h-[44px] py-2 px-4 text-on-surface-variant hover:bg-surface-container p-1 rounded-md">
                 <Icon name="close" />
               </button>
             </div>
             
-            <form onSubmit={handleSubmit} className="p-6 overflow-y-auto flex-grow grid grid-cols-1 md:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="p-4 md:p-6 overflow-y-auto flex-grow grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-5">
               
               <div className="md:col-span-1">
                 <label className="block text-sm font-semibold mb-1.5">Nomor Arsip <span className="text-error">*</span></label>

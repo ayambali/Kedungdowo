@@ -47,9 +47,7 @@ export default function AdminHeaderProfile({
   return (
     <div className="relative" ref={dropdownRef}>
       {/* Avatar Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2.5 pl-1 pr-3 py-1 rounded-full border border-outline-variant/20 shadow-sm ml-2 cursor-pointer hover:ring-2 hover:ring-offset-2 hover:ring-primary/40 transition-all focus:outline-none bg-white/40 hover:bg-white/60"
+      <button onClick={() => setIsOpen(!isOpen)} className="min-h-[44px] py-2 px-4 flex items-center gap-2.5 pl-1 pr-3 py-1 rounded-full border border-outline-variant/20 shadow-sm ml-2 cursor-pointer hover:ring-2 hover:ring-offset-2 hover:ring-primary/40 transition-all focus:outline-none bg-white/40 hover:bg-white/60"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -113,9 +111,7 @@ export default function AdminHeaderProfile({
 
           {/* Logout Action */}
           <div className="px-2">
-            <button
-              onClick={handleLogout}
-              className="flex w-full items-center gap-3 px-3 py-2 rounded-xl text-sm font-semibold text-error hover:bg-error/5 transition-colors text-left"
+            <button onClick={handleLogout} className="min-h-[44px] py-2 px-4 flex w-full items-center gap-3 px-3 py-2 rounded-xl text-sm font-semibold text-error hover:bg-error/5 transition-colors text-left"
             >
               <Icon name="logout" className="text-lg" />
               <span>Keluar</span>
@@ -128,19 +124,15 @@ export default function AdminHeaderProfile({
       {isLogoutModalOpen && typeof document !== 'undefined'
         ? createPortal(
             <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fadeIn">
-              <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl border border-outline-variant/20 animate-slideUpAndFade">
+              <div className="bg-white rounded-2xl p-4 md:p-6 w-full max-w-sm shadow-2xl border border-outline-variant/20 animate-slideUpAndFade">
                 <h3 className="text-xl font-bold text-on-surface mb-2">Konfirmasi Keluar</h3>
                 <p className="text-on-surface-variant/80 mb-6 font-medium">Apakah Anda yakin ingin keluar dari halaman admin?</p>
                 <div className="flex justify-end gap-3 mt-8">
-                  <button
-                    onClick={() => setIsLogoutModalOpen(false)}
-                    className="px-5 py-2.5 rounded-xl text-sm font-semibold text-on-surface-variant hover:bg-on-surface-variant/10 transition-colors"
+                  <button onClick={() => setIsLogoutModalOpen(false)} className="min-h-[44px] py-2 px-4 px-5 py-2.5 rounded-xl text-sm font-semibold text-on-surface-variant hover:bg-on-surface-variant/10 transition-colors"
                   >
                     Batal
                   </button>
-                  <button
-                    onClick={confirmLogout}
-                    className="px-5 py-2.5 rounded-xl text-sm font-semibold bg-error text-white hover:bg-error/90 transition-colors shadow-sm shadow-error/20"
+                  <button onClick={confirmLogout} className="min-h-[44px] py-2 px-4 px-5 py-2.5 rounded-xl text-sm font-semibold bg-error text-white hover:bg-error/90 transition-colors shadow-sm shadow-error/20"
                   >
                     Ya, Keluar
                   </button>

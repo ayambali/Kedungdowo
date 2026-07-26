@@ -39,7 +39,7 @@ const OrgCard = ({
           <img src={photoUrl} alt={name || title} className="w-full h-full object-cover" />
         ) : (
           <div className="flex flex-col items-center justify-center text-gray-300">
-            <Icon name="person" filled className="text-4xl" />
+            <Icon name="person" filled className="text-2xl md:text-4xl" />
           </div>
         )}
       </div>
@@ -141,7 +141,7 @@ export default async function PemerintahanPage() {
       <main className="relative z-10 w-full">
         {/* Page Header */}
         <div className="text-center max-w-2xl mx-auto px-6 mb-12">
-          <h1 className="font-serif text-3xl md:text-5xl font-bold text-on-surface mb-2 md:mb-4 leading-tight">
+          <h1 className="font-serif text-2xl md:text-3xl md:text-3xl md:text-5xl font-bold text-on-surface mb-2 md:mb-4 leading-tight">
             Pemerintahan <span className="italic font-light text-primary">Desa</span>
           </h1>
           <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">

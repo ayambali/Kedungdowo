@@ -145,7 +145,7 @@ function ProductCard({ produk }: { produk: any }) {
       </div>
 
       {/* Card Content */}
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-4 md:p-6 flex flex-col flex-grow">
         <div className="flex justify-between items-start mb-3 gap-2">
           <h3 className="font-serif text-lg text-on-surface font-bold leading-tight group-hover:text-primary transition-colors">
             {produk.namaProduk}
@@ -249,12 +249,12 @@ export default function UmkmCatalogClient({ initialProducts }: Props) {
   };
 
   return (
-    <div className="max-w-[1200px] mx-auto px-6">
+    <div className="w-full max-w-7xl mx-auto px-6">
       
       {/* Page Header */}
       <div className="mb-16 text-center max-w-2xl mx-auto">
         <AnimateIn delay={0.2} direction="up">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold text-on-surface mb-6 leading-tight">
+          <h1 className="font-serif text-2xl md:text-4xl md:text-3xl md:text-5xl font-bold text-on-surface mb-6 leading-tight">
             Pasar <span className="italic font-light text-primary">Desa</span>
           </h1>
         </AnimateIn>
@@ -322,7 +322,7 @@ export default function UmkmCatalogClient({ initialProducts }: Props) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {paginatedProducts.map((produk, idx) => (
               <AnimateIn key={produk.id} delay={0.1 * (idx % 3)} direction="up" className="h-full">
                 <ProductCard produk={produk} />
@@ -335,9 +335,7 @@ export default function UmkmCatalogClient({ initialProducts }: Props) {
             <div className="mt-12 flex flex-wrap justify-center items-center gap-2 border-t border-outline-variant/30 pt-6">
               {/* Tombol Sebelumnya */}
               {safePage > 1 ? (
-                <button
-                  onClick={() => goToPage(safePage - 1)}
-                  className="inline-flex items-center justify-center gap-1 min-w-[40px] h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all text-sm font-semibold"
+                <button onClick={() => goToPage(safePage - 1)} className="min-h-[44px] py-2 px-4 inline-flex items-center justify-center gap-1 min-w-[40px] h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all text-sm font-semibold"
                 >
                   <Icon name="chevron_left" className="text-lg" />
                   Sebelumnya
@@ -373,9 +371,7 @@ export default function UmkmCatalogClient({ initialProducts }: Props) {
 
               {/* Tombol Selanjutnya */}
               {safePage < totalPages ? (
-                <button
-                  onClick={() => goToPage(safePage + 1)}
-                  className="inline-flex items-center justify-center gap-1 min-w-[40px] h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all text-sm font-semibold"
+                <button onClick={() => goToPage(safePage + 1)} className="min-h-[44px] py-2 px-4 inline-flex items-center justify-center gap-1 min-w-[40px] h-10 px-3 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container hover:text-primary transition-all text-sm font-semibold"
                 >
                   Selanjutnya
                   <Icon name="chevron_right" className="text-lg" />
@@ -396,10 +392,10 @@ export default function UmkmCatalogClient({ initialProducts }: Props) {
 
       {/* Tonal CTA Card */}
       <AnimateIn delay={0.2} direction="up" className="mt-16">
-        <div className="bg-surface-container rounded-2xl p-8 flex flex-col justify-center items-center text-center min-h-[250px] border border-outline-variant/20 shadow-sm relative overflow-hidden">
+        <div className="bg-surface-container rounded-2xl p-4 md:p-8 flex flex-col justify-center items-center text-center min-h-[250px] border border-outline-variant/20 shadow-sm relative overflow-hidden">
           <div className="absolute inset-0 z-0 bg-[radial-gradient(#707a6c_1px,transparent_1px)] bg-[size:24px_24px] opacity-[0.05] pointer-events-none" />
           <div className="relative z-10 max-w-xl">
-            <h3 className="font-serif text-2xl md:text-3xl font-bold mb-3 text-on-surface">Dukung UMKM Lokal</h3>
+            <h3 className="font-serif text-2xl md:text-2xl md:text-3xl font-bold mb-3 text-on-surface">Dukung UMKM Lokal</h3>
             <p className="text-sm md:text-base mb-6 text-on-surface-variant leading-relaxed">
               Setiap pembelian Anda berkontribusi langsung pada kesejahteraan pengrajin dan petani Desa Kedungdowo. Ingin mendaftarkan usaha Anda? Silakan hubungi admin desa.
             </p>

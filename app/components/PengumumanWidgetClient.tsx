@@ -93,12 +93,10 @@ export default function PengumumanWidgetClient({ pengumumanList }: Props) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", duration: 0.4 }}
-              className="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-2xl p-6 md:p-8 overflow-hidden z-10 flex flex-col"
+              className="relative w-full max-w-lg bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-2xl p-4 md:p-6 md:p-4 md:p-8 overflow-hidden z-10 flex flex-col"
             >
               {/* Close Button Top Right */}
-              <button
-                onClick={() => setSelected(null)}
-                className="absolute top-4 right-4 text-on-surface-variant hover:text-primary hover:bg-surface-container p-2 rounded-full transition-all duration-200"
+              <button onClick={() => setSelected(null)} className="min-h-[44px] py-2 px-4 absolute top-4 right-4 text-on-surface-variant hover:text-primary hover:bg-surface-container p-2 rounded-full transition-all duration-200"
                 aria-label="Tutup"
               >
                 <Icon name="close" className="text-xl" />
@@ -128,9 +126,7 @@ export default function PengumumanWidgetClient({ pengumumanList }: Props) {
               </div>
 
               <div className="mt-6 flex justify-end">
-                <button
-                  onClick={() => setSelected(null)}
-                  className="bg-primary text-on-primary hover:bg-primary/90 text-sm font-semibold px-5 h-[40px] rounded-lg shadow-sm transition-colors"
+                <button onClick={() => setSelected(null)} className="min-h-[44px] py-2 px-4 bg-primary text-on-primary hover:bg-primary/90 text-sm font-semibold px-5 h-[40px] rounded-lg shadow-sm transition-colors"
                 >
                   Tutup
                 </button>

@@ -151,9 +151,7 @@ export default function PerangkatClient({ initialData }: { initialData: any[] })
             className="w-full bg-surface-container-low border border-outline-variant/50 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-primary"
           />
         </div>
-        <button 
-          onClick={handleOpenNew}
-          className="bg-primary w-full md:w-auto text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex justify-center items-center gap-2 hover:bg-surface-tint transition-colors shadow-sm"
+        <button onClick={handleOpenNew} className="min-h-[44px] py-2 px-4 bg-primary w-full md:w-auto text-on-primary px-4 py-2 rounded-lg text-sm font-bold flex justify-center items-center gap-2 hover:bg-surface-tint transition-colors shadow-sm"
         >
           <Icon name="add" className="text-lg" /> Tambah {activeTab}
         </button>
@@ -194,10 +192,10 @@ export default function PerangkatClient({ initialData }: { initialData: any[] })
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex justify-end gap-2">
-                      <button onClick={() => handleOpenEdit(item)} className="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded-md transition-colors">
+                      <button onClick={() => handleOpenEdit(item)} className="min-h-[44px] py-2 px-4 p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded-md transition-colors">
                         <Icon name="edit" className="text-lg" />
                       </button>
-                      <button onClick={() => confirmDelete(item.id)} className="p-1.5 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-md transition-colors">
+                      <button onClick={() => confirmDelete(item.id)} className="min-h-[44px] py-2 px-4 p-1.5 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-md transition-colors">
                         <Icon name="delete" className="text-lg" />
                       </button>
                     </div>
@@ -213,14 +211,14 @@ export default function PerangkatClient({ initialData }: { initialData: any[] })
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
           <div className="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-lg max-h-[90vh] flex flex-col overflow-hidden">
-            <div className="p-6 border-b border-outline-variant/20 flex justify-between items-center">
+            <div className="p-4 md:p-6 border-b border-outline-variant/20 flex justify-between items-center">
               <h2 className="font-serif text-xl font-bold">{editingId ? "Edit" : "Tambah"} {activeTab}</h2>
-              <button onClick={() => setIsModalOpen(false)} className="text-on-surface-variant hover:bg-surface-container p-1 rounded-md">
+              <button onClick={() => setIsModalOpen(false)} className="min-h-[44px] py-2 px-4 text-on-surface-variant hover:bg-surface-container p-1 rounded-md">
                 <Icon name="close" />
               </button>
             </div>
             
-            <form onSubmit={handleSubmit} className="p-6 overflow-y-auto flex-grow flex flex-col gap-4">
+            <form onSubmit={handleSubmit} className="p-4 md:p-6 overflow-y-auto flex-grow flex flex-col gap-4">
               <div>
                 <label className="block text-sm font-semibold mb-1.5">Nama Lengkap</label>
                 <input required type="text" value={formData.nama} onChange={(e) => setFormData({...formData, nama: e.target.value})} className="w-full bg-surface-container border border-outline-variant/50 rounded-lg px-4 py-2.5 focus:border-primary focus:outline-none" />

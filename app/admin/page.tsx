@@ -117,13 +117,13 @@ export default async function AdminDashboard() {
       <div className="grid grid-cols-1 xl:grid-cols-12 gap-8">
         
         {/* Welcome Banner */}
-        <section className="xl:col-span-8 bg-white rounded-3xl p-8 md:p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-outline-variant/20 relative overflow-hidden flex flex-col justify-center min-h-[260px]">
+        <section className="xl:col-span-8 bg-white rounded-3xl p-4 md:p-8 md:p-4 md:p-10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-outline-variant/20 relative overflow-hidden flex flex-col justify-center min-h-[260px]">
           <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none rounded-3xl">
             <div className="absolute -right-32 -top-32 w-96 h-96 bg-primary-fixed opacity-20 rounded-full blur-[80px]"></div>
             <div className="absolute right-10 bottom-10 w-64 h-64 bg-secondary-fixed opacity-15 rounded-full blur-[60px]"></div>
           </div>
           <div className="relative z-10 max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-on-surface mb-3 leading-tight">
+            <h2 className="text-2xl md:text-3xl md:text-2xl md:text-4xl font-serif font-bold text-on-surface mb-3 leading-tight">
               Sugeng Enjang,<br />
               <span className="text-primary italic">{displayName}</span>
             </h2>
@@ -134,17 +134,17 @@ export default async function AdminDashboard() {
         </section>
 
         {/* Weather/Date Widget */}
-        <section className="xl:col-span-4 bg-white rounded-3xl p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-outline-variant/20 flex flex-col justify-between relative overflow-hidden min-h-[260px]">
+        <section className="xl:col-span-4 bg-white rounded-3xl p-4 md:p-8 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.04)] border border-outline-variant/20 flex flex-col justify-between relative overflow-hidden min-h-[260px]">
           <div className="absolute top-0 right-0 w-32 h-32 bg-tertiary-fixed opacity-15 rounded-bl-full blur-2xl"></div>
           <div>
             <p className="text-[10px] text-secondary font-sans uppercase tracking-widest font-bold mb-1">Status Hari Ini</p>
             <h3 className="text-xl font-serif font-bold text-on-surface capitalize">{formattedDate}</h3>
           </div>
           <div className="mt-6 flex flex-col gap-2">
-            <Icon name="partly_cloudy_day" className="text-5xl text-tertiary-container mb-1" />
+            <Icon name="partly_cloudy_day" className="text-3xl md:text-5xl text-tertiary-container mb-1" />
             <div className="flex items-end w-full">
               <div>
-                <p className="text-3xl font-bold text-on-surface leading-none mb-1">
+                <p className="text-2xl md:text-3xl font-bold text-on-surface leading-none mb-1">
                   28<span className="text-lg text-on-surface-variant/50">°C</span>
                 </p>
                 <p className="text-xs text-on-surface-variant">Cerah Berawan, Boyolali</p>
@@ -156,7 +156,7 @@ export default async function AdminDashboard() {
       </div>
 
       {/* Varied Stats Cards */}
-      <section className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat) => (
           <div key={stat.label} className="bg-white rounded-2xl p-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] border border-outline-variant/20 hover:shadow-md transition-shadow duration-300 flex flex-col justify-between min-h-[140px]">
             <div className="flex justify-between items-start mb-4">
@@ -183,7 +183,7 @@ export default async function AdminDashboard() {
         <div className="px-8 py-5 border-b border-outline-variant/20 flex items-center bg-white/50">
           <h3 className="text-lg font-serif font-bold text-on-surface">Aktivitas Terbaru</h3>
         </div>
-        <div className="p-8">
+        <div className="p-4 md:p-8">
           <div className="flex flex-col relative">
             
             {latestActivities.length === 0 ? (
@@ -195,7 +195,7 @@ export default async function AdminDashboard() {
                   <div className={`w-10 h-10 rounded-full border-2 border-white flex items-center justify-center shrink-0 shadow-sm z-10 ${act.iconColor}`}>
                     <Icon name={act.icon} className="text-[18px]" />
                   </div>
-                  <div className={`flex-1 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 bg-surface-container-lowest p-4 rounded-2xl border hover:shadow-md transition-shadow ${act.type === 'layanan' && act.status === 'Belum Direspon' ? 'border-error-container/40' : 'border-outline-variant/10'}`}>
+                  <div className={`flex-1 flex flex-col sm:flex-col md:flex-row sm:justify-between sm:items-center gap-2 bg-surface-container-lowest p-4 rounded-2xl border hover:shadow-md transition-shadow ${act.type === 'layanan' && act.status === 'Belum Direspon' ? 'border-error-container/40' : 'border-outline-variant/10'}`}>
                     <div>
                       <p className="text-sm font-semibold text-on-surface mb-0.5">{act.title}</p>
                       <p className="text-xs text-on-surface-variant">{act.subtitle}</p>

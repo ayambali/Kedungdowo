@@ -108,18 +108,16 @@ export default function KelolaAdminClient({
       )}
 
       {/* Header Actions */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+      <div className="flex flex-col sm:flex-col md:flex-row justify-between items-start sm:items-center gap-4 mb-8">
         <div>
-          <h2 className="text-2xl md:text-3xl font-serif font-bold text-on-surface">
+          <h2 className="text-2xl md:text-2xl md:text-3xl font-serif font-bold text-on-surface">
             Kelola Admin
           </h2>
           <p className="text-sm text-on-surface-variant mt-1">
             Kelola akun pengguna yang memiliki akses ke dashboard admin.
           </p>
         </div>
-        <button
-          onClick={() => setShowAddModal(true)}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-xl font-semibold text-sm hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
+        <button onClick={() => setShowAddModal(true)} className="min-h-[44px] py-2 px-4 inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-on-primary rounded-xl font-semibold text-sm hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 active:scale-[0.98]"
         >
           <Icon name="person_add" className="text-lg" />
           Tambah Admin
@@ -200,17 +198,13 @@ export default function KelolaAdminClient({
                     {/* Actions */}
                     <td className="px-6 py-4">
                       <div className="flex items-center justify-end gap-1">
-                        <button
-                          onClick={() => setShowPasswordModal(admin)}
-                          className="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant/60 hover:text-tertiary hover:bg-tertiary/10 transition-colors"
+                        <button onClick={() => setShowPasswordModal(admin)} className="min-h-[44px] py-2 px-4 w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant/60 hover:text-tertiary hover:bg-tertiary/10 transition-colors"
                           title="Ubah Password"
                         >
                           <Icon name="key" className="text-lg" />
                         </button>
                         {!isSelf && (
-                          <button
-                            onClick={() => setShowDeleteModal(admin)}
-                            className="w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant/60 hover:text-error hover:bg-error/10 transition-colors"
+                          <button onClick={() => setShowDeleteModal(admin)} className="min-h-[44px] py-2 px-4 w-8 h-8 flex items-center justify-center rounded-lg text-on-surface-variant/60 hover:text-error hover:bg-error/10 transition-colors"
                             title="Hapus Admin"
                           >
                             <Icon name="delete" className="text-lg" />
@@ -225,7 +219,7 @@ export default function KelolaAdminClient({
               {admins.length === 0 && (
                 <tr>
                   <td colSpan={4} className="px-6 py-12 text-center text-on-surface-variant/50">
-                    <Icon name="group_off" className="text-4xl mb-2 block mx-auto" />
+                    <Icon name="group_off" className="text-2xl md:text-4xl mb-2 block mx-auto" />
                     <p className="text-sm font-medium">Belum ada admin terdaftar.</p>
                   </td>
                 </tr>
@@ -248,7 +242,7 @@ export default function KelolaAdminClient({
                   Tambah Admin Baru
                 </h3>
               </div>
-              <form action={handleAddAdmin} className="p-6 space-y-4">
+              <form action={handleAddAdmin} className="p-4 md:p-6 space-y-4">
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-on-surface-variant/70 mb-1.5">
                     Username <span className="text-error">*</span>
@@ -333,7 +327,7 @@ export default function KelolaAdminClient({
                   Untuk: <span className="font-semibold text-on-surface">@{showPasswordModal.username}</span>
                 </p>
               </div>
-              <form action={handleUpdatePassword} className="p-6 space-y-4">
+              <form action={handleUpdatePassword} className="p-4 md:p-6 space-y-4">
                 <input type="hidden" name="userId" value={showPasswordModal.id} />
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-on-surface-variant/70 mb-1.5">
@@ -374,7 +368,7 @@ export default function KelolaAdminClient({
       {showDeleteModal && typeof document !== "undefined" &&
         createPortal(
           <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fadeIn">
-            <div className="bg-white rounded-2xl p-6 w-full max-w-sm shadow-2xl border border-outline-variant/20 animate-slideUpAndFade">
+            <div className="bg-white rounded-2xl p-4 md:p-6 w-full max-w-sm shadow-2xl border border-outline-variant/20 animate-slideUpAndFade">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 rounded-full bg-error/10 flex items-center justify-center">
                   <Icon name="person_remove" className="text-error text-2xl" />
@@ -389,9 +383,7 @@ export default function KelolaAdminClient({
                 Akun ini akan dihapus secara permanen.
               </p>
               <div className="flex justify-end gap-3">
-                <button
-                  onClick={() => setShowDeleteModal(null)}
-                  className="px-5 py-2.5 rounded-xl text-sm font-semibold text-on-surface-variant hover:bg-on-surface-variant/10 transition-colors"
+                <button onClick={() => setShowDeleteModal(null)} className="min-h-[44px] py-2 px-4 px-5 py-2.5 rounded-xl text-sm font-semibold text-on-surface-variant hover:bg-on-surface-variant/10 transition-colors"
                 >
                   Batal
                 </button>

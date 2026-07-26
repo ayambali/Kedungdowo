@@ -16,11 +16,11 @@ export default function KetahananPanganPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
         <div className="absolute inset-0 flex items-end">
-          <div className="max-w-[800px] mx-auto px-6 pb-12 md:pb-16 w-full">
+          <div className="w-full max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
             <span className="inline-block px-3 py-1 mb-4 bg-primary text-on-primary text-xs font-bold uppercase tracking-wider rounded-sm">
               Katalog Potensi Desa
             </span>
-            <h1 className="font-serif text-3xl md:text-5xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+            <h1 className="font-serif text-2xl md:text-3xl md:text-3xl md:text-5xl lg:text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               Membangun Ekosistem Ketahanan Pangan Kedungdowo
             </h1>
             <p className="text-white/90 text-lg md:text-xl font-light italic border-l-4 border-primary pl-4">
@@ -31,7 +31,7 @@ export default function KetahananPanganPage() {
       </section>
 
       {/* 2. Article Content */}
-      <section className="max-w-[800px] mx-auto px-6 py-10 md:py-16 text-on-surface-variant text-lg leading-relaxed space-y-8">
+      <section className="w-full max-w-7xl mx-auto px-6 py-10 md:py-16 text-on-surface-variant text-lg leading-relaxed space-y-8">
         
         {/* Intro */}
         <div>
@@ -49,7 +49,7 @@ export default function KetahananPanganPage() {
 
         {/* Section 1 */}
         <div className="pt-6">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-on-surface mb-6">
+          <h2 className="font-serif text-2xl md:text-2xl md:text-3xl font-bold text-on-surface mb-6">
             1. Adaptasi Cerdas Lahan Tegalan oleh Kelompok Tani
           </h2>
           <div className="space-y-4 text-justify">
@@ -64,10 +64,10 @@ export default function KetahananPanganPage() {
 
         {/* Section 2 */}
         <div className="pt-6">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-on-surface mb-6">
+          <h2 className="font-serif text-2xl md:text-2xl md:text-3xl font-bold text-on-surface mb-6">
             2. Kemandirian Gizi dan Ekonomi: Sinergi KTT, KWT, dan Pelaku UMKM
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
             <div className="relative aspect-square sm:aspect-[4/3] rounded-lg overflow-hidden bg-surface-container shadow-sm border border-outline/10">
                <Image src="/umkm (1).jpeg" alt="Produk UMKM 1" fill className="object-cover" />
             </div>
@@ -90,7 +90,7 @@ export default function KetahananPanganPage() {
 
         {/* Section 3 */}
         <div className="pt-6">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-on-surface mb-6">
+          <h2 className="font-serif text-2xl md:text-2xl md:text-3xl font-bold text-on-surface mb-6">
             3. Jaring Pengaman Kesehatan Sosial: Peran Vital PKK, Dawis, dan Posyandu
           </h2>
           <div className="space-y-4 text-justify">
@@ -105,7 +105,7 @@ export default function KetahananPanganPage() {
 
         {/* Section 4 */}
         <div className="pt-6">
-          <h2 className="font-serif text-2xl md:text-3xl font-bold text-on-surface mb-6">
+          <h2 className="font-serif text-2xl md:text-2xl md:text-3xl font-bold text-on-surface mb-6">
             4. Semangat Gotong Royong sebagai Fondasi Utama Desa
           </h2>
           <div className="space-y-4 text-justify">
@@ -120,8 +120,8 @@ export default function KetahananPanganPage() {
       </section>
 
       {/* Footer/Conclusion */}
-      <section className="max-w-[800px] mx-auto px-6 mt-4">
-        <div className="bg-surface-container-low rounded-2xl p-8 md:p-10 border border-outline/10 shadow-sm text-center">
+      <section className="w-full max-w-7xl mx-auto px-6 mt-4">
+        <div className="bg-surface-container-low rounded-2xl p-4 md:p-8 md:p-4 md:p-10 border border-outline/10 shadow-sm text-center">
           <p className="font-serif text-xl md:text-2xl text-on-surface leading-relaxed mb-8 italic">
             "Dari lahan tegalan yang dirawat dengan keringat petani, diolah oleh keuletan perempuan desa, hingga dijaga oleh kepedulian sosial yang inklusif—inilah bukti nyata ketangguhan Desa Kedungdowo."
           </p>

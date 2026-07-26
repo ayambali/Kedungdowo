@@ -55,12 +55,12 @@ export default async function Home() {
 
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto flex flex-col items-center gap-6 mt-16">
           <AnimateIn delay={0.1}>
-            <span className="font-serif text-2xl md:text-3xl text-white font-bold drop-shadow-lg uppercase tracking-[0.2em] block">
+            <span className="font-serif text-2xl md:text-2xl md:text-3xl text-white font-bold drop-shadow-lg uppercase tracking-[0.2em] block">
               Selamat Datang di
             </span>
           </AnimateIn>
           <AnimateIn delay={0.2}>
-            <h1 className="font-serif text-4xl md:text-6xl text-white font-bold drop-shadow-lg leading-tight">
+            <h1 className="font-serif text-2xl md:text-4xl md:text-6xl text-white font-bold drop-shadow-lg leading-tight">
               Desa Kedungdowo
             </h1>
           </AnimateIn>
@@ -77,13 +77,13 @@ Kecamatan Andong, Kabupaten Boyolali, Jawa Tengah — Desa dengan potensi unggul
         </div>
 
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-          <Icon name="expand_more" className="text-white/60 text-3xl" />
+          <Icon name="expand_more" className="text-white/60 text-2xl md:text-3xl" />
         </div>
       </section>
 
       {/* ====== PROFIL VIDEO & INTRO ====== */}
       <section className="py-16 md:py-24 bg-background">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Introduction */}
             <div className="lg:col-span-5 flex flex-col justify-center">
@@ -91,7 +91,7 @@ Kecamatan Andong, Kabupaten Boyolali, Jawa Tengah — Desa dengan potensi unggul
                 <span className="text-secondary font-semibold text-sm uppercase tracking-wider block mb-3">
                   Selayang Pandang
                 </span>
-                <h2 className="font-serif text-3xl md:text-4xl text-primary font-bold mb-6">
+                <h2 className="font-serif text-2xl md:text-3xl md:text-2xl md:text-4xl text-primary font-bold mb-6">
                   Mengenal Lebih Dekat Desa Kedungdowo
                 </h2>
                 <p className="text-on-surface-variant text-base md:text-lg leading-relaxed mb-4">
@@ -129,7 +129,7 @@ Kecamatan Andong, Kabupaten Boyolali, Jawa Tengah — Desa dengan potensi unggul
                   {/* Play Button Overlay */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-20 h-20 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <Icon name="play_arrow" className="text-4xl text-white" filled />
+                      <Icon name="play_arrow" className="text-2xl md:text-4xl text-white" filled />
                     </div>
                   </div>
 
@@ -152,13 +152,13 @@ Kecamatan Andong, Kabupaten Boyolali, Jawa Tengah — Desa dengan potensi unggul
       {/* ====== BERITA TERKINI ====== */}
       <div className="batik-divider w-full" />
       <section className="py-16 md:py-24 bg-background">
-        <div className="max-w-[1200px] mx-auto px-6">
+        <div className="w-full max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
             <AnimateIn delay={0.1} direction="up">
               <span className="text-secondary font-semibold text-sm uppercase tracking-wider block mb-3">
                 Kabar Desa
               </span>
-              <h2 className="font-serif text-3xl md:text-4xl text-primary font-bold">
+              <h2 className="font-serif text-2xl md:text-3xl md:text-2xl md:text-4xl text-primary font-bold">
                 Berita & Kegiatan Terbaru
               </h2>
             </AnimateIn>
@@ -173,12 +173,12 @@ Kecamatan Andong, Kabupaten Boyolali, Jawa Tengah — Desa dengan potensi unggul
 
           {beritaList.length === 0 ? (
             <div className="text-center py-16 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm">
-              <Icon name="newspaper" className="text-5xl text-on-surface-variant/30 mb-4" />
+              <Icon name="newspaper" className="text-3xl md:text-5xl text-on-surface-variant/30 mb-4" />
               <h3 className="font-serif text-lg font-bold text-on-background">Belum Ada Berita</h3>
               <p className="text-on-surface-variant text-sm mt-1">Nantikan informasi kegiatan menarik dari desa kami segera.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {beritaList.map((berita, index) => (
                 <AnimateIn key={berita.id} delay={0.2 + (index * 0.1)} direction="up" className="h-full">
                   <article className="h-full bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant/20 hover:shadow-md hover:shadow-secondary/5 transition-all group flex flex-col">
@@ -194,7 +194,7 @@ Kecamatan Andong, Kabupaten Boyolali, Jawa Tengah — Desa dengan potensi unggul
                       </div>
                     </div>
 
-                    <div className="p-6 flex flex-col flex-grow">
+                    <div className="p-4 md:p-6 flex flex-col flex-grow">
                       <time className="text-xs font-medium text-on-surface-variant mb-3 flex items-center gap-1.5">
                         <Icon name="schedule" className="text-sm" />
                         {new Date(berita.createdAt).toLocaleDateString("id-ID", { day: "numeric", month: "short", year: "numeric" })}

@@ -29,6 +29,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const isLogin = pathname === "/login";
   const isAdmin = pathname.startsWith("/admin");
@@ -54,7 +55,20 @@ export default function Navbar() {
   // Close mobile menu on route change
   useEffect(() => {
     setMobileOpen(false);
+    setOpenMobileDropdown(null);
   }, [pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [mobileOpen]);
 
   if (isLogin || isAdmin) return null;
 
@@ -180,25 +194,39 @@ export default function Navbar() {
             if (link.subLinks) {
               return (
                 <div key={link.href} className="flex flex-col gap-1">
-                  <div className="px-4 py-2 text-xs font-bold text-outline uppercase tracking-wider mt-2">
+                  <button 
+                    onClick={() => setOpenMobileDropdown(openMobileDropdown === link.href ? null : link.href)}
+                    className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all flex justify-between items-center w-full ${
+                      openMobileDropdown === link.href || link.subLinks.some(s => pathname === s.href)
+                        ? "text-primary bg-primary/10"
+                        : "text-on-surface-variant hover:bg-surface-container"
+                    }`}
+                  >
                     {link.label}
+                    <span className={`material-symbols-outlined transition-transform duration-300 ${openMobileDropdown === link.href ? 'rotate-180' : ''}`}>
+                      expand_more
+                    </span>
+                  </button>
+                  <div className={`overflow-hidden transition-all duration-300 ${openMobileDropdown === link.href ? 'max-h-64 opacity-100 mt-1' : 'max-h-0 opacity-0'}`}>
+                    <div className="flex flex-col gap-1 pl-4 border-l-2 border-outline-variant/30 ml-6 py-1">
+                      {link.subLinks.map((sub) => {
+                        const isSubActive = pathname === sub.href;
+                        return (
+                          <Link
+                            key={sub.href}
+                            href={sub.href}
+                            className={`px-4 py-2.5 rounded-lg font-medium text-sm transition-all ${
+                              isSubActive
+                                ? "text-primary bg-primary/5"
+                                : "text-on-surface-variant hover:text-primary hover:bg-surface-container"
+                            }`}
+                          >
+                            {sub.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
-                  {link.subLinks.map((sub) => {
-                    const isSubActive = pathname === sub.href;
-                    return (
-                      <Link
-                        key={sub.href}
-                        href={sub.href}
-                        className={`px-4 py-3 rounded-lg font-semibold text-sm transition-all ml-2 border-l-2 ${
-                          isSubActive
-                            ? "text-primary bg-primary/10 border-primary"
-                            : "text-on-surface-variant hover:text-primary hover:bg-primary/5 border-transparent"
-                        }`}
-                      >
-                        {sub.label}
-                      </Link>
-                    );
-                  })}
                 </div>
               );
             }

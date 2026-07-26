@@ -61,11 +61,11 @@ export default async function PeraturanDesaPage({ searchParams }: PageProps) {
     <div className="relative min-h-screen bg-surface py-20 md:py-32">
       <div className="absolute inset-0 z-0 bg-[radial-gradient(#707a6c_1px,transparent_1px),radial-gradient(#707a6c_1px,transparent_1px)] bg-[size:40px_40px] bg-[position:0_0,20px_20px] opacity-[0.03] pointer-events-none" />
 
-      <main className="relative z-10 w-full max-w-[1200px] mx-auto px-6">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-6">
         
         {/* Page Header */}
         <div className="pt-8 md:pt-12 mb-12 text-center max-w-2xl mx-auto">
-          <h1 className="font-serif text-3xl md:text-5xl font-bold text-on-surface mb-4 leading-tight">
+          <h1 className="font-serif text-2xl md:text-3xl md:text-3xl md:text-5xl font-bold text-on-surface mb-4 leading-tight">
             Produk Hukum <span className="italic font-light text-primary">Desa</span>
           </h1>
           <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
@@ -73,13 +73,13 @@ export default async function PeraturanDesaPage({ searchParams }: PageProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           
           {/* Main Content (Kiri) */}
           <div className="lg:col-span-3 flex flex-col gap-6">
             
             {/* Search Form */}
-            <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-6 md:p-8">
+            <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-4 md:p-6 md:p-4 md:p-8">
               <SearchForm 
                 initialJudul={judul} 
                 initialNomor={nomor} 
@@ -92,7 +92,7 @@ export default async function PeraturanDesaPage({ searchParams }: PageProps) {
             <div className="flex flex-col gap-[16px]">
               {peraturanList.length === 0 ? (
                 <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-12 text-center text-on-surface-variant">
-                  <Icon name="search_off" className="text-5xl opacity-30 mb-3" />
+                  <Icon name="search_off" className="text-3xl md:text-5xl opacity-30 mb-3" />
                   <p className="font-bold text-lg text-on-surface">Dokumen Tidak Ditemukan</p>
                   <p className="text-sm mt-1 opacity-80">Coba gunakan kata kunci pencarian yang lain.</p>
                 </div>
@@ -106,7 +106,7 @@ export default async function PeraturanDesaPage({ searchParams }: PageProps) {
                     <div className="shrink-0 pt-1 hidden md:block">
                       <div className="w-16 h-20 bg-red-50 rounded flex items-center justify-center border-2 border-red-500 text-red-600 relative overflow-hidden">
                         <div className="absolute top-0 bg-red-600 text-white text-[10px] font-bold w-full text-center py-0.5 tracking-wider">PDF</div>
-                        <Icon name="folder" className="text-3xl mt-3" />
+                        <Icon name="folder" className="text-2xl md:text-3xl mt-3" />
                       </div>
                     </div>
 
@@ -200,7 +200,7 @@ export default async function PeraturanDesaPage({ searchParams }: PageProps) {
 
           {/* Sidebar (Kanan) */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-6 sticky top-28">
+            <div className="bg-white rounded-2xl shadow-sm border border-outline-variant/20 p-4 md:p-6 sticky top-28">
               <h3 className="font-bold text-lg text-on-surface mb-5 pb-3 border-b border-outline-variant/20 font-serif">Jenis Peraturan</h3>
               <ul className="flex flex-col gap-1">
                 <li>

@@ -99,7 +99,7 @@ export default async function ArtikelDetail({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="mb-8">
-        <h1 className="text-4xl font-bold font-serif mb-4">{artikel.judul}</h1>
+        <h1 className="text-2xl md:text-4xl font-bold font-serif mb-4">{artikel.judul}</h1>
         <div className="text-gray-500 mb-6">
           {new Date(artikel.createdAt).toLocaleDateString("id-ID", {
             year: "numeric",

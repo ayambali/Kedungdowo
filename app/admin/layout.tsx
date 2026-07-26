@@ -52,11 +52,11 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
           {/* Trailing Actions & Profile */}
           <div className="flex items-center gap-3 ml-auto pl-12 md:pl-0">
-            <button className="w-10 h-10 flex items-center justify-center hover:bg-white/60 rounded-full transition-all text-on-surface-variant/80 border border-outline-variant/25 shadow-sm relative group bg-white/40">
+            <button className="min-h-[44px] py-2 px-4 w-10 h-10 flex items-center justify-center hover:bg-white/60 rounded-full transition-all text-on-surface-variant/80 border border-outline-variant/25 shadow-sm relative group bg-white/40">
               <Icon name="notifications" className="text-xl group-hover:text-primary transition-colors" />
               <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-error rounded-full border border-white"></span>
             </button>
-            <button className="w-10 h-10 hidden sm:flex items-center justify-center hover:bg-white/60 rounded-full transition-all text-on-surface-variant/80 border border-outline-variant/25 shadow-sm group bg-white/40">
+            <button className="min-h-[44px] py-2 px-4 w-10 h-10 hidden sm:flex items-center justify-center hover:bg-white/60 rounded-full transition-all text-on-surface-variant/80 border border-outline-variant/25 shadow-sm group bg-white/40">
               <Icon name="help" className="text-xl group-hover:text-primary transition-colors" />
             </button>
             
@@ -72,8 +72,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         </header>
 
         {/* Main Canvas */}
-        <main className="flex-grow overflow-y-auto p-6 md:p-10 pb-20 custom-scrollbar">
-          <div className="max-w-[1200px] mx-auto w-full">
+        <main className="flex-grow overflow-y-auto p-4 md:p-6 md:p-4 md:p-10 pb-20 custom-scrollbar">
+          <div className="w-full max-w-7xl mx-auto">
             {children}
           </div>
         </main>

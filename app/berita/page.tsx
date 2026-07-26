@@ -68,12 +68,12 @@ export default async function BeritaPage({ searchParams }: PageProps) {
 
   return (
     <div className="relative min-h-screen bg-background">
-      <main className="relative z-10 w-full max-w-[1200px] mx-auto px-6 pb-20 md:pb-32">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 pb-20 md:pb-32">
         
         {/* ===== PAGE HEADER ===== */}
         <div className="pt-20 md:pt-28 mb-12 text-center max-w-2xl mx-auto px-6">
           <AnimateIn delay={0.1} direction="up">
-            <h1 className="font-serif text-3xl md:text-5xl font-bold text-on-surface mb-2 md:mb-4 leading-tight">
+            <h1 className="font-serif text-2xl md:text-3xl md:text-3xl md:text-5xl font-bold text-on-surface mb-2 md:mb-4 leading-tight">
               Berita <span className="italic font-light text-primary">& Kegiatan</span>
             </h1>
             <p className="text-sm md:text-base text-on-surface-variant leading-relaxed">
@@ -107,7 +107,7 @@ export default async function BeritaPage({ searchParams }: PageProps) {
                     </div>
 
                     {/* Content overlaid on image */}
-                    <div className="relative z-10 flex flex-col justify-end h-full p-6 md:p-10">
+                    <div className="relative z-10 flex flex-col justify-end h-full p-4 md:p-6 md:p-4 md:p-10">
                       <div className="flex items-center gap-3 mb-4">
                         <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full ${getChipColor(featured.kategori)}`}>
                           {featured.kategori}
@@ -117,7 +117,7 @@ export default async function BeritaPage({ searchParams }: PageProps) {
                           {new Date(featured.createdAt).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}
                         </span>
                       </div>
-                      <h2 className="font-serif text-2xl md:text-4xl font-bold text-white leading-snug mb-3 group-hover:text-[#a3f69c] transition-colors line-clamp-3">
+                      <h2 className="font-serif text-2xl md:text-2xl md:text-4xl font-bold text-white leading-snug mb-3 group-hover:text-[#a3f69c] transition-colors line-clamp-3">
                         {featured.judul}
                       </h2>
                       <p className="text-white/80 text-sm md:text-base line-clamp-2 leading-relaxed max-w-2xl mb-4">
@@ -136,7 +136,7 @@ export default async function BeritaPage({ searchParams }: PageProps) {
           {/* Pengumuman Sidebar */}
           <aside className="lg:col-span-4">
             <AnimateIn delay={0.3} direction="left" className="w-full">
-              <div className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm p-6 flex flex-col max-h-[500px] lg:max-h-[520px]">
+              <div className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 shadow-sm p-4 md:p-6 flex flex-col max-h-[500px] lg:max-h-[520px]">
                 <div className="flex items-center gap-2 mb-5 pb-4 border-b border-outline-variant/15 shrink-0">
                   <Icon name="campaign" filled className="text-secondary text-xl" />
                   <h3 className="font-serif text-lg font-bold text-on-surface">Pengumuman</h3>
@@ -155,7 +155,7 @@ export default async function BeritaPage({ searchParams }: PageProps) {
                 <span className="text-secondary font-semibold text-sm uppercase tracking-wider block mb-2">
                   Berita Lainnya
                 </span>
-                <h2 className="font-serif text-3xl font-bold text-on-surface">
+                <h2 className="font-serif text-2xl md:text-3xl font-bold text-on-surface">
                   Kabar Terkini
                 </h2>
               </div>
@@ -164,12 +164,12 @@ export default async function BeritaPage({ searchParams }: PageProps) {
 
           {others.length === 0 && !featured ? (
             <div className="text-center py-16 bg-surface-container-lowest rounded-2xl border border-outline-variant/20">
-              <Icon name="article" className="text-5xl text-on-surface-variant/30 mb-4" />
+              <Icon name="article" className="text-3xl md:text-5xl text-on-surface-variant/30 mb-4" />
               <h3 className="font-serif text-lg font-bold text-on-background">Belum Ada Berita</h3>
               <p className="text-on-surface-variant text-sm mt-1">Nantikan informasi terbaru dari Desa Kedungdowo.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
               {others.map((berita, idx) => (
                 <AnimateIn key={berita.id} delay={0.1 + 0.08 * (idx % 3)} direction="up" className="h-full">
                   <Link href={getBeritaUrl(berita.judul, berita.id)} className="group block h-full">
@@ -185,7 +185,7 @@ export default async function BeritaPage({ searchParams }: PageProps) {
                           />
                         ) : (
                           <div className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                            <Icon name="article" className="text-5xl text-primary/20" />
+                            <Icon name="article" className="text-3xl md:text-5xl text-primary/20" />
                           </div>
                         )}
                         <div className="absolute top-3 left-3">

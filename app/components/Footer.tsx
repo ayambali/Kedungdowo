@@ -57,7 +57,7 @@ export default function Footer() {
       className="bg-[#111612] border-t border-white/5 text-white/80"
     >
       {/* Main Footer */}
-      <div className="max-w-[1200px] mx-auto px-6 pt-8 pb-6">
+      <div className="w-full max-w-7xl mx-auto px-6 pt-8 pb-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-6">
           {/* Brand Column */}
           <div className="lg:col-span-5 pr-4">

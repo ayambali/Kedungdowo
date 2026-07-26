@@ -24,7 +24,7 @@ export default async function DataPendudukPage() {
 
   return (
     <div>
-      <h1 className="font-serif text-3xl font-bold text-on-background mb-2">
+      <h1 className="font-serif text-2xl md:text-3xl font-bold text-on-background mb-2">
         Statistik & Fasilitas Desa
       </h1>
       <p className="text-on-surface-variant text-sm mb-8">
@@ -32,7 +32,7 @@ export default async function DataPendudukPage() {
       </p>
 
       {/* Stats Summary Card */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
         <div className="bg-white rounded-2xl p-5 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] border border-outline-variant/20 flex items-center gap-4 hover:shadow-md transition-shadow duration-300">
           <div className="w-12 h-12 rounded-xl bg-primary-container/10 text-primary flex items-center justify-center shrink-0">
             <Icon name="groups" className="text-2xl" />

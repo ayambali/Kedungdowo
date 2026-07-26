@@ -49,17 +49,17 @@ export default function LoginPage() {
               }}
             />
 
-            <div className="p-8 md:p-10 relative z-10">
+            <div className="p-4 md:p-8 md:p-4 md:p-10 relative z-10">
               
               {/* Logo & Header */}
               <div className="text-center mb-8">
                 <div className="mb-6 flex justify-center">
                   <div className="relative w-16 h-16 flex items-center justify-center">
                     <div className="absolute inset-0 bg-primary/10 rounded-xl rotate-45 border border-primary/20"></div>
-                    <Icon name="potted_plant" className="text-primary text-3xl relative z-10" />
+                    <Icon name="potted_plant" className="text-primary text-2xl md:text-3xl relative z-10" />
                   </div>
                 </div>
-                <h1 className="font-serif text-3xl font-bold text-on-surface mb-2 tracking-tight">
+                <h1 className="font-serif text-2xl md:text-3xl font-bold text-on-surface mb-2 tracking-tight">
                   Kedungdowo
                 </h1>
                 <p className="text-xs text-on-surface-variant uppercase tracking-widest font-bold">

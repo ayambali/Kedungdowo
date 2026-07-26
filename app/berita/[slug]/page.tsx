@@ -71,7 +71,7 @@ export default async function DetailBeritaPage({ params }: { params: Promise<{ s
 
   return (
     <div className="relative min-h-screen bg-background">
-      <main className="relative z-10 w-full max-w-[800px] mx-auto px-6 pt-10 pb-20 md:pb-32">
+      <main className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-10 pb-20 md:pb-32">
         
         {/* Breadcrumb */}
         <nav className="flex items-center gap-1.5 text-xs font-medium text-on-surface-variant/60 mb-10 pt-8 md:pt-16">
@@ -92,7 +92,7 @@ export default async function DetailBeritaPage({ params }: { params: Promise<{ s
           </div>
 
           {/* Title */}
-          <h1 className="font-serif text-3xl md:text-[2.75rem] font-bold text-primary leading-[1.25] tracking-tight mb-6 drop-shadow-sm">
+          <h1 className="font-serif text-2xl md:text-3xl md:text-[2.75rem] font-bold text-primary leading-[1.25] tracking-tight mb-6 drop-shadow-sm">
             {artikel.judul}
           </h1>
 
@@ -215,7 +215,7 @@ export default async function DetailBeritaPage({ params }: { params: Promise<{ s
               </Link>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {rekomendasiList.map((rec) => (
                 <Link 
                   href={getBeritaUrl(rec.judul, rec.id)} 

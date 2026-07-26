@@ -52,17 +52,13 @@ export default function PeraturanForm({ initialData }: PeraturanFormProps) {
     <>
       {/* Tombol Pemicu Modal */}
       {initialData ? (
-        <button 
-          onClick={() => setIsOpen(true)}
-          className="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-orange-50 text-orange-600 hover:bg-orange-100 transition-colors"
+        <button onClick={() => setIsOpen(true)} className="min-h-[44px] py-2 px-4 inline-flex items-center justify-center w-8 h-8 rounded-lg bg-orange-50 text-orange-600 hover:bg-orange-100 transition-colors"
           title="Edit"
         >
           <Icon name="edit" className="text-[18px]" />
         </button>
       ) : (
-        <button 
-          onClick={() => setIsOpen(true)}
-          className="h-12 px-6 bg-primary text-white font-bold rounded-xl shadow-md hover:bg-primary/90 hover:shadow-lg transition-all flex items-center gap-2"
+        <button onClick={() => setIsOpen(true)} className="min-h-[44px] py-2 px-4 h-12 px-6 bg-primary text-white font-bold rounded-xl shadow-md hover:bg-primary/90 hover:shadow-lg transition-all flex items-center gap-2"
         >
           <Icon name="add" className="text-xl" />
           Tambah Peraturan Baru
@@ -77,7 +73,7 @@ export default function PeraturanForm({ initialData }: PeraturanFormProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 overflow-hidden"
+            className="fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 sm:p-4 md:p-6 overflow-hidden"
             onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false); }}
           >
             <motion.div 
@@ -98,16 +94,14 @@ export default function PeraturanForm({ initialData }: PeraturanFormProps) {
                     <p className="text-xs text-on-surface-variant mt-0.5">{initialData ? "Ubah data dokumen peraturan ini" : "Unggah dokumen baru ke arsip JDIH"}</p>
                   </div>
                 </div>
-                <button 
-                  onClick={() => setIsOpen(false)}
-                  className="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors"
+                <button onClick={() => setIsOpen(false)} className="min-h-[44px] py-2 px-4 w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-variant hover:text-on-surface transition-colors"
                 >
                   <Icon name="close" />
                 </button>
               </div>
 
               {/* Body Modal (Scrollable) */}
-              <div className="overflow-y-auto p-6 md:p-8 flex-grow custom-scrollbar">
+              <div className="overflow-y-auto p-4 md:p-6 md:p-4 md:p-8 flex-grow custom-scrollbar">
                 {message && (
                   <div className={`p-4 rounded-xl mb-6 text-sm flex items-start gap-2 ${message.type === "success" ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700"}`}>
                     <Icon name={message.type === "success" ? "check_circle" : "error"} className="mt-0.5 text-lg" />
@@ -118,7 +112,7 @@ export default function PeraturanForm({ initialData }: PeraturanFormProps) {
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                   
                   {/* Row 1: Judul & Kategori */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
                       <label htmlFor="judul" className="text-sm font-semibold text-on-surface">Judul Peraturan <span className="text-red-500">*</span></label>
                       <input
@@ -153,7 +147,7 @@ export default function PeraturanForm({ initialData }: PeraturanFormProps) {
                   </div>
 
                   {/* Row 2: Nomor & Tahun */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col gap-2">
                       <label htmlFor="nomor" className="text-sm font-semibold text-on-surface">Nomor <span className="text-red-500">*</span></label>
                       <input
@@ -208,7 +202,7 @@ export default function PeraturanForm({ initialData }: PeraturanFormProps) {
                   </div>
 
                   {/* Row 5: Lokasi Simpan & Jumlah FIsik */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-outline-variant/20">
+                  <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-outline-variant/20">
                     <div className="flex flex-col gap-2">
                       <label htmlFor="lokasiSimpan" className="text-sm font-semibold text-on-surface">Lokasi Simpan Fisik <span className="text-red-500">*</span></label>
                       <input

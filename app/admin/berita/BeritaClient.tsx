@@ -311,9 +311,9 @@ export default function BeritaClient({ initialData }: { initialData: any[] }) {
   return (
     <>
       {/* Search, Filter, and Add Buttons Panel */}
-      <div className="mb-6 flex flex-col lg:flex-row justify-between items-start lg:items-center bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 shadow-sm gap-4">
+      <div className="mb-6 flex flex-col lg:flex-col md:flex-row justify-between items-start lg:items-center bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 shadow-sm gap-4">
         {/* Left: Search & Filter Segment */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
+        <div className="flex flex-col sm:flex-col md:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
           {/* Search Input */}
           <div className="relative w-full sm:w-64">
             <Icon name="search" className="absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant/50 text-lg" />
@@ -353,15 +353,11 @@ export default function BeritaClient({ initialData }: { initialData: any[] }) {
 
         {/* Right: Add Buttons */}
         <div className="flex gap-3 w-full lg:w-auto flex-wrap justify-end">
-          <button 
-            onClick={() => handleOpenNew("Berita")}
-            className="flex-grow sm:flex-grow-0 bg-primary text-on-primary px-4 py-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 hover:bg-surface-tint transition-all duration-300 shadow-sm active:scale-95"
+          <button onClick={() => handleOpenNew("Berita")} className="min-h-[44px] py-2 px-4 flex-grow sm:flex-grow-0 bg-primary text-on-primary px-4 py-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 hover:bg-surface-tint transition-all duration-300 shadow-sm active:scale-95"
           >
             <Icon name="add" className="text-base" /> Tambah Berita
           </button>
-          <button 
-            onClick={() => handleOpenNew("Pengumuman")}
-            className="flex-grow sm:flex-grow-0 bg-secondary-container text-on-secondary-container border border-outline-variant/30 px-4 py-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all duration-300 shadow-sm active:scale-95"
+          <button onClick={() => handleOpenNew("Pengumuman")} className="min-h-[44px] py-2 px-4 flex-grow sm:flex-grow-0 bg-secondary-container text-on-secondary-container border border-outline-variant/30 px-4 py-2.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 hover:bg-surface-container-high transition-all duration-300 shadow-sm active:scale-95"
           >
             <Icon name="campaign" className="text-base" /> Tambah Pengumuman
           </button>
@@ -369,7 +365,7 @@ export default function BeritaClient({ initialData }: { initialData: any[] }) {
       </div>
 
       {/* Table List */}
-      <div className="bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm overflow-hidden">
+      <div className="bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm overflow-hidden overflow-x-auto whitespace-nowrap scrollbar-hide">
         <table className="w-full text-left text-sm text-on-surface">
           <thead className="bg-surface-container-low text-on-surface-variant border-b border-outline-variant/20">
             <tr>
@@ -422,10 +418,10 @@ export default function BeritaClient({ initialData }: { initialData: any[] }) {
                   </td>
                   <td className="px-6 py-4 text-right">
                     <div className="flex justify-end gap-2">
-                      <button onClick={() => handleOpenEdit(item)} className="p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded-md transition-colors">
+                      <button onClick={() => handleOpenEdit(item)} className="min-h-[44px] py-2 px-4 p-1.5 text-on-surface-variant hover:text-primary hover:bg-primary/10 rounded-md transition-colors">
                         <Icon name="edit" className="text-lg" />
                       </button>
-                      <button onClick={() => handleDeleteClick(item.id)} className="p-1.5 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-md transition-colors">
+                      <button onClick={() => handleDeleteClick(item.id)} className="min-h-[44px] py-2 px-4 p-1.5 text-on-surface-variant hover:text-error hover:bg-error/10 rounded-md transition-colors">
                         <Icon name="delete" className="text-lg" />
                       </button>
                     </div>
@@ -439,7 +435,7 @@ export default function BeritaClient({ initialData }: { initialData: any[] }) {
 
       {/* Pagination Footer */}
       {filteredData.length > 0 && (
-        <div className="mt-6 flex flex-col sm:flex-row justify-between items-center bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 shadow-sm gap-4 text-xs font-semibold text-on-surface-variant">
+        <div className="mt-6 flex flex-col sm:flex-col md:flex-row justify-between items-center bg-surface-container-lowest p-4 rounded-xl border border-outline-variant/20 shadow-sm gap-4 text-xs font-semibold text-on-surface-variant">
           <div>
             Menampilkan <span className="font-bold text-on-surface">{startEntry}</span> - <span className="font-bold text-on-surface">{endEntry}</span> dari <span className="font-bold text-on-surface">{filteredData.length}</span> artikel
           </div>
@@ -485,20 +481,20 @@ export default function BeritaClient({ initialData }: { initialData: any[] }) {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
           <div className="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden animate-scale-up">
             {/* Modal Header */}
-            <div className="p-6 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-low/30">
+            <div className="p-4 md:p-6 border-b border-outline-variant/20 flex justify-between items-center bg-surface-container-low/30">
               <h2 className="font-serif text-lg font-bold">
                 {editingId 
                   ? (formData.kategori === "Pengumuman" ? "Edit Pengumuman" : "Edit Berita / Kegiatan") 
                   : (formData.kategori === "Pengumuman" ? "Tambah Pengumuman Baru" : "Tambah Berita / Kegiatan Baru")
                 }
               </h2>
-              <button onClick={() => setIsModalOpen(false)} className="text-on-surface-variant hover:bg-surface-container p-1 rounded-md transition-colors">
+              <button onClick={() => setIsModalOpen(false)} className="min-h-[44px] py-2 px-4 text-on-surface-variant hover:bg-surface-container p-1 rounded-md transition-colors">
                 <Icon name="close" />
               </button>
             </div>
             
             {/* Form */}
-            <form onSubmit={handleSubmit} className="p-6 overflow-y-auto flex-grow flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="p-4 md:p-6 overflow-y-auto flex-grow flex flex-col gap-5">
               {/* Judul */}
               <div>
                 <label className="block text-sm font-semibold mb-1.5">Judul</label>
@@ -665,7 +661,7 @@ export default function BeritaClient({ initialData }: { initialData: any[] }) {
       {/* Custom Confirm Delete Modal */}
       {confirmState.isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fade-in">
-          <div className="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-md p-6 border border-outline-variant/30 flex flex-col gap-4 animate-scale-up">
+          <div className="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-md p-4 md:p-6 border border-outline-variant/30 flex flex-col gap-4 animate-scale-up">
             <div className="flex items-center gap-3 text-error">
               <div className="w-10 h-10 rounded-full bg-error-container/20 flex items-center justify-center shrink-0">
                 <Icon name="delete_forever" className="text-xl" />
