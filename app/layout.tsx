@@ -82,7 +82,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${sourceSerif.variable} ${plusJakarta.variable} h-full antialiased`}
+      className={`${sourceSerif.variable} ${plusJakarta.variable} h-full antialiased overflow-x-hidden w-full`}
     >
       <head>
         <link
@@ -94,9 +94,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
+      <body className="min-h-full flex flex-col font-sans overflow-x-hidden w-full relative">
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow w-full overflow-hidden">{children}</main>
         <Footer />
         <ChatBotDesa />
       </body>
