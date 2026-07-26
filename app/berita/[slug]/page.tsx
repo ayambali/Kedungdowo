@@ -113,14 +113,12 @@ export default async function DetailBeritaPage({ params }: { params: Promise<{ s
 
         {/* Hero Image */}
         {artikel.fotoUrl && (
-          <figure className="mb-12 relative group">
-            <div className="w-full rounded-[2rem] overflow-hidden shadow-lg border border-outline-variant/10 bg-white">
-              <img 
-                src={artikel.fotoUrl} 
-                alt={artikel.judul} 
-                className="w-full h-auto max-h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" 
-              />
-            </div>
+          <figure className="mb-10 w-full flex justify-center">
+            <img 
+              src={artikel.fotoUrl} 
+              alt={artikel.judul} 
+              className="w-auto max-w-full h-auto max-h-[300px] md:max-h-[500px] object-contain rounded-2xl shadow-md border border-outline-variant/20" 
+            />
           </figure>
         )}
 
@@ -138,7 +136,7 @@ export default async function DetailBeritaPage({ params }: { params: Promise<{ s
                       <p 
                         key={`${blok.id}-${pIndex}`} 
                         className={isFirst 
-                          ? "mb-8 text-lg md:text-[20px] leading-[1.8] text-[#1e293b] font-medium first-letter:text-6xl first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:-mt-2 first-letter:leading-none" 
+                          ? "mb-8 text-lg md:text-[19px] leading-[1.8] text-[#1e293b] font-medium" 
                           : "mb-6 text-base md:text-[17px] text-[#334155] font-normal tracking-wide"}
                       >
                         {paragraph}
@@ -147,14 +145,12 @@ export default async function DetailBeritaPage({ params }: { params: Promise<{ s
                   });
                 } else if (blok.tipe === "gambar") {
                   return (
-                    <figure key={blok.id} className="my-10">
-                      <div className="w-full rounded-2xl overflow-hidden shadow-md border border-outline-variant/10">
-                        <img 
-                          src={blok.konten} 
-                          alt={blok.caption || artikel.judul} 
-                          className="w-full h-auto object-cover not-prose hover:scale-105 transition-transform duration-500" 
-                        />
-                      </div>
+                    <figure key={blok.id} className="my-10 w-full flex flex-col items-center">
+                      <img 
+                        src={blok.konten} 
+                        alt={blok.caption || artikel.judul} 
+                        className="w-auto max-w-full h-auto max-h-[400px] md:max-h-[500px] object-contain rounded-2xl shadow-sm border border-outline-variant/10 not-prose" 
+                      />
                       {blok.caption && (
                         <figcaption className="mt-3 text-center text-sm italic text-on-surface-variant/70 not-prose font-serif">
                           {blok.caption}
@@ -173,7 +169,7 @@ export default async function DetailBeritaPage({ params }: { params: Promise<{ s
                   <p 
                     key={index} 
                     className={isFirst 
-                      ? "mb-8 text-lg md:text-[20px] leading-[1.8] text-[#1e293b] font-medium first-letter:text-6xl first-letter:font-serif first-letter:font-bold first-letter:text-primary first-letter:float-left first-letter:mr-3 first-letter:-mt-2 first-letter:leading-none" 
+                      ? "mb-8 text-lg md:text-[19px] leading-[1.8] text-[#1e293b] font-medium" 
                       : "mb-6 text-base md:text-[17px] text-[#334155] font-normal tracking-wide"}
                   >
                     {paragraph}

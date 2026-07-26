@@ -27,7 +27,7 @@ export async function GET(request: Request) {
       create: { id: 1, pingedAt: new Date() },
     });
 
-    console.log(`[keep-alive] Pinged at ${result.pingedAt.toISOString()}`);
+
 
     return NextResponse.json({
       status: 'ok',
@@ -35,7 +35,7 @@ export async function GET(request: Request) {
     });
   } catch (error) {
     const message = error instanceof Error ? error.message : 'Unknown error';
-    console.error('[keep-alive] Error:', message);
+
 
     return NextResponse.json(
       { status: 'error', message },

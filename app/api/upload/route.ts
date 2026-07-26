@@ -10,6 +10,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
 
+    if (file.size > 2 * 1024 * 1024) {
+      return NextResponse.json({ error: "Ukuran gambar maksimal 2MB" }, { status: 400 });
+    }
+    
+    if (!['image/jpeg', 'image/png', 'image/webp'].includes(file.type)) {
+      return NextResponse.json({ error: "Format gambar harus JPEG, PNG, atau WEBP" }, { status: 400 });
+    }
+
     // Create unique filename
     const uniqueSuffix = `${Date.now()}-${Math.round(Math.random() * 1e9)}`;
     const filename = `${uniqueSuffix}-${file.name.replace(/\s+/g, "-")}`;
@@ -21,7 +29,6 @@ export async function POST(request: NextRequest) {
       .upload(filePath, file, { cacheControl: "3600", upsert: false });
 
     if (error) {
-      console.error("Error uploading to Supabase:", error);
       return NextResponse.json({ error: "Failed to upload file to Supabase" }, { status: 500 });
     }
 
@@ -32,7 +39,6 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ url: publicUrlData.publicUrl });
   } catch (error) {
-    console.error("Upload error:", error);
     return NextResponse.json({ error: "Failed to process upload" }, { status: 500 });
   }
 }

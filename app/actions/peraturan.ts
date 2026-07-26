@@ -19,6 +19,12 @@ export async function tambahPeraturan(formData: FormData) {
     let filePdfUrl: string | null = null;
 
     if (file && file.size > 0) {
+      if (file.size > 5 * 1024 * 1024) {
+        return { success: false, error: "Ukuran file PDF maksimal 5MB." };
+      }
+      if (file.type !== "application/pdf") {
+        return { success: false, error: "Format file harus berupa PDF." };
+      }
       // Generate unique file name
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
@@ -32,7 +38,6 @@ export async function tambahPeraturan(formData: FormData) {
         });
 
       if (error) {
-        console.error("Error uploading to Supabase:", error);
         return { success: false, error: "Gagal mengunggah file ke server Supabase." };
       }
 
@@ -62,8 +67,7 @@ export async function tambahPeraturan(formData: FormData) {
 
     return { success: true, data: newPeraturan };
   } catch (error: any) {
-    console.error("Error tambahPeraturan:", error);
-    return { success: false, error: error.message || "Gagal menyimpan data." };
+    return { success: false, error: "Gagal menyimpan data." };
   }
 }
 
@@ -89,6 +93,12 @@ export async function editPeraturan(formData: FormData, id: string) {
     };
 
     if (file && file.size > 0) {
+      if (file.size > 5 * 1024 * 1024) {
+        return { success: false, error: "Ukuran file PDF maksimal 5MB." };
+      }
+      if (file.type !== "application/pdf") {
+        return { success: false, error: "Format file harus berupa PDF." };
+      }
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
       const filePath = `peraturan/${fileName}`;
@@ -98,8 +108,7 @@ export async function editPeraturan(formData: FormData, id: string) {
         .upload(filePath, file, { cacheControl: "3600", upsert: false });
 
       if (error) {
-        console.error("Error uploading to Supabase:", error);
-        return { success: false, error: "Gagal mengunggah file PDF." };
+        return { success: false, error: "Gagal mengunggah file baru ke Supabase." };
       }
 
       const { data: publicUrlData } = supabase.storage
@@ -119,8 +128,7 @@ export async function editPeraturan(formData: FormData, id: string) {
 
     return { success: true, data: updated };
   } catch (error: any) {
-    console.error("Error editPeraturan:", error);
-    return { success: false, error: error.message || "Gagal mengubah data." };
+    return { success: false, error: "Gagal mengubah data." };
   }
 }
 
@@ -131,7 +139,6 @@ export async function hapusPeraturan(id: string) {
     revalidatePath("/admin/peraturan-desa");
     return { success: true };
   } catch (error: any) {
-    console.error("Error hapusPeraturan:", error);
-    return { success: false, error: error.message || "Gagal menghapus data." };
+    return { success: false, error: "Gagal menghapus data." };
   }
 }

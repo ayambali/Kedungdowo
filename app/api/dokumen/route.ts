@@ -29,7 +29,7 @@ export async function GET(request: Request) {
       },
     });
   } catch (error) {
-    console.error('Error fetching document:', error);
+
     return new NextResponse('Error fetching document', { status: 500 });
   }
 }

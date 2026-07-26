@@ -29,7 +29,7 @@ export async function POST(req: Request) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error menyimpan layanan:", error);
+
     return NextResponse.json(
       {
         success: false,
@@ -60,7 +60,7 @@ export async function GET() {
 
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {
-    console.error("Error mengambil data layanan:", error);
+
     return NextResponse.json(
       {
         success: false,

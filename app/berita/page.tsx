@@ -90,40 +90,39 @@ export default async function BeritaPage({ searchParams }: PageProps) {
             {featured && (
               <AnimateIn delay={0.2} direction="up" className="h-full">
                 <Link href={getBeritaUrl(featured.judul, featured.id)} className="group block h-full">
-                  <div className="relative rounded-2xl overflow-hidden h-full min-h-[420px] shadow-lg">
-                    {/* Background Image */}
-                    <div className="absolute inset-0">
+                  <div className="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-full">
+                    <div className="relative w-full aspect-video md:aspect-[16/9] bg-surface-container-low overflow-hidden shrink-0 border-b border-outline-variant/15">
                       {featured.fotoUrl ? (
                         <img 
                           src={featured.fotoUrl} 
                           alt={featured.judul} 
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                          className="w-full h-full object-contain bg-black/5 group-hover:scale-105 transition-transform duration-700 ease-out" 
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-primary to-secondary" />
+                        <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/20" />
                       )}
-                      {/* Dark gradient overlay for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
                     </div>
 
-                    {/* Content overlaid on image */}
-                    <div className="relative z-10 flex flex-col justify-end h-full p-4 md:p-6 md:p-4 md:p-10">
+                    <div className="p-5 md:p-8 flex flex-col flex-grow">
                       <div className="flex items-center gap-3 mb-4">
                         <span className={`text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full ${getChipColor(featured.kategori)}`}>
                           {featured.kategori}
                         </span>
-                        <span className="text-white/70 text-xs font-medium flex items-center gap-1">
+                        <span className="text-on-surface-variant text-xs font-medium flex items-center gap-1">
                           <Icon name="schedule" className="text-xs" />
                           {new Date(featured.createdAt).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}
                         </span>
                       </div>
-                      <h2 className="font-serif text-2xl md:text-2xl md:text-4xl font-bold text-white leading-snug mb-3 group-hover:text-[#a3f69c] transition-colors line-clamp-3">
+                      
+                      <h2 className="font-sans text-xl md:text-3xl font-bold text-on-surface leading-snug mb-3 group-hover:text-primary transition-colors line-clamp-3">
                         {featured.judul}
                       </h2>
-                      <p className="text-white/80 text-sm md:text-base line-clamp-2 leading-relaxed max-w-2xl mb-4">
+                      
+                      <p className="text-on-surface-variant text-sm md:text-base line-clamp-2 md:line-clamp-3 leading-relaxed mb-6 flex-grow">
                         {featured.konten}
                       </p>
-                      <span className="inline-flex items-center gap-2 text-[#a3f69c] text-sm font-bold group-hover:gap-3 transition-all">
+                      
+                      <span className="inline-flex items-center gap-2 text-primary text-sm font-bold group-hover:gap-3 transition-all mt-auto">
                         Baca Selengkapnya <Icon name="arrow_forward" className="text-base" />
                       </span>
                     </div>

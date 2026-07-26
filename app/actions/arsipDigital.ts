@@ -24,6 +24,12 @@ export async function createArsip(formData: FormData) {
     let filePdfUrl: string | null = null;
 
     if (file && file.size > 0) {
+      if (file.size > 5 * 1024 * 1024) {
+        throw new Error("Ukuran file PDF maksimal 5MB.");
+      }
+      if (file.type !== "application/pdf") {
+        throw new Error("Format file harus berupa PDF.");
+      }
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
       const filePath = `arsip/${fileName}`;
@@ -33,7 +39,6 @@ export async function createArsip(formData: FormData) {
         .upload(filePath, file, { cacheControl: "3600", upsert: false });
 
       if (error) {
-        console.error("Error uploading to Supabase:", error);
         throw new Error("Gagal mengunggah file PDF.");
       }
 
@@ -61,7 +66,6 @@ export async function createArsip(formData: FormData) {
     revalidatePath("/layanan/arsip");
     return { success: true, data: newArsip };
   } catch (error: any) {
-    console.error("Error createArsip:", error);
     throw new Error(error.message || "Gagal menyimpan data.");
   }
 }
@@ -88,6 +92,12 @@ export async function editArsip(formData: FormData, id: number) {
     };
 
     if (file && file.size > 0) {
+      if (file.size > 5 * 1024 * 1024) {
+        throw new Error("Ukuran file PDF maksimal 5MB.");
+      }
+      if (file.type !== "application/pdf") {
+        throw new Error("Format file harus berupa PDF.");
+      }
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
       const filePath = `arsip/${fileName}`;
@@ -97,7 +107,6 @@ export async function editArsip(formData: FormData, id: number) {
         .upload(filePath, file, { cacheControl: "3600", upsert: false });
 
       if (error) {
-        console.error("Error uploading to Supabase:", error);
         throw new Error("Gagal mengunggah file PDF.");
       }
 
@@ -117,7 +126,6 @@ export async function editArsip(formData: FormData, id: number) {
     revalidatePath("/layanan/arsip");
     return { success: true, data: updatedArsip };
   } catch (error: any) {
-    console.error("Error editArsip:", error);
     throw new Error(error.message || "Gagal mengubah data.");
   }
 }
@@ -131,7 +139,6 @@ export async function deleteArsip(id: number) {
     revalidatePath("/layanan/arsip");
     return { success: true };
   } catch (error: any) {
-    console.error("Error deleteArsip:", error);
     throw new Error("Gagal menghapus data.");
   }
 }
