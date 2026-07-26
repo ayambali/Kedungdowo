@@ -105,14 +105,14 @@ function ProductCard({ produk }: { produk: any }) {
                 <button
                   type="button"
                   onClick={prevImage}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-1 rounded-full opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center"
                 >
                   <Icon name="chevron_left" className="text-lg" />
                 </button>
                 <button
                   type="button"
                   onClick={nextImage}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 text-white p-1 rounded-full opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center"
                 >
                   <Icon name="chevron_right" className="text-lg" />
                 </button>
@@ -169,7 +169,7 @@ function ProductCard({ produk }: { produk: any }) {
           </div>
 
           <a
-            href={`https://wa.me/${produk.kontakWa}?text=Halo%20${encodeURIComponent(produk.namaPemilik)},%20saya%20tertarik%20untuk%20memesan%20produk%20*${encodeURIComponent(produk.namaProduk)}*%20yang%20ada%20di%20website%20Desa%20Kedungdowo.`}
+            href={`https://wa.me/${produk.kontakWa?.startsWith("0") ? "62" + produk.kontakWa.substring(1) : produk.kontakWa}?text=Halo%20${encodeURIComponent(produk.namaPemilik)},%20saya%20tertarik%20untuk%20memesan%20produk%20*${encodeURIComponent(produk.namaProduk)}*%20yang%20ada%20di%20website%20Desa%20Kedungdowo.`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full py-3 bg-on-surface text-surface rounded-full font-semibold text-sm hover:bg-primary hover:text-on-primary transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm"
