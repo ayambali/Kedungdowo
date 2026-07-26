@@ -10,7 +10,7 @@ const navLinks = [
     label: "Profil Desa",
     subLinks: [
       { href: "/profil", label: "Tentang Desa / Sejarah" },
-      { href: "/potensi/ketahanan-pangan", label: "Katalog Ketahanan Pangan" },
+      { href: "/potensi/ketahanan-pangan", label: "Potensi Ketahanan Pangan" },
     ]
   },
   { href: "/perangkat", label: "Perangkat Desa" },

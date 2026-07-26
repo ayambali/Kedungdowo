@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export const metadata = { title: "Katalog Ketahanan Pangan - Desa Kedungdowo" };
+export const metadata = { title: "Potensi Ketahanan Pangan - Desa Kedungdowo" };
 
 export default function KetahananPanganPage() {
   return (
@@ -18,7 +18,7 @@ export default function KetahananPanganPage() {
         <div className="absolute inset-0 flex items-end">
           <div className="w-full max-w-7xl mx-auto px-6 pb-12 md:pb-16 w-full">
             <span className="inline-block px-3 py-1 mb-4 bg-primary text-on-primary text-xs font-bold uppercase tracking-wider rounded-sm">
-              Katalog Potensi Desa
+              Potensi Desa
             </span>
             <h1 className="font-serif text-2xl md:text-3xl md:text-3xl md:text-5xl lg:text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
               Membangun Ekosistem Ketahanan Pangan Kedungdowo
