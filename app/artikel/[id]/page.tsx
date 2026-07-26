@@ -3,7 +3,8 @@ import Image from "next/image";
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.desakedungdowo.com";
+if (!siteUrl.startsWith("http")) siteUrl = `https://${siteUrl}`;
 
 type Props = {
   params: Promise<{ id: string }>;

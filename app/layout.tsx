@@ -19,7 +19,10 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.desakedungdowo.com";
+if (!siteUrl.startsWith("http")) {
+  siteUrl = `https://${siteUrl}`;
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

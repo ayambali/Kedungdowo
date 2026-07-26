@@ -2,7 +2,8 @@ import { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.desakedungdowo.com";
+  if (!siteUrl.startsWith("http")) siteUrl = `https://${siteUrl}`;
 
   // Static Routes
   const staticRoutes: MetadataRoute.Sitemap = [
