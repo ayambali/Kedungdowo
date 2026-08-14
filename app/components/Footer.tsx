@@ -104,7 +104,7 @@ export default function Footer() {
                 className="flex items-center gap-2 text-white/60 hover:text-[#a3f69c] transition-colors text-sm"
               >
                 <span className="material-symbols-outlined text-lg">mail</span>
-                desa.kedungdowo@gmail.com
+                kedungdowoandong@gmail.com
               </a>
               <div className="flex items-center gap-2 text-white/60 text-sm">
                 <span className="material-symbols-outlined text-lg">

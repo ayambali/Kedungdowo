@@ -141,20 +141,12 @@ function ProductCard({
 
         {urls.length > 0 ? (
           <>
-            {/* Background: Full photo filling frame with very subtle blur */}
-            <img
-              src={urls[activeIdx]}
-              alt=""
-              aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover blur-[3px] scale-105 opacity-85 brightness-85 select-none pointer-events-none"
-            />
-            <div className="absolute inset-0 bg-black/10 pointer-events-none" />
-
-            {/* Foreground: Full Uncropped Main Image with subtle shadow */}
             <img
               src={urls[activeIdx]}
               alt={`${produk.namaProduk} - foto ${activeIdx + 1}`}
-              className="w-full h-full object-contain relative z-10 p-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.25)] transition-transform duration-500 group-hover/img:scale-105"
+              decoding="async"
+              loading="lazy"
+              className="w-full h-full object-cover transition-transform duration-300 group-hover/img:scale-105"
             />
             {urls.length > 1 && (
               <>

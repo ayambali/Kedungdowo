@@ -201,8 +201,8 @@ export default function UmkmDetailModal({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-md flex items-center justify-center p-2.5 sm:p-4 md:p-6 lg:p-8 overflow-hidden"
+          transition={{ duration: 0.18 }}
+          className="fixed inset-0 z-[9999] bg-black/75 flex items-center justify-center p-2.5 sm:p-4 md:p-6 lg:p-8 overflow-hidden"
           onClick={(e) => {
             if (e.target === e.currentTarget) onClose();
           }}
@@ -211,15 +211,15 @@ export default function UmkmDetailModal({
           aria-labelledby="umkm-detail-title"
         >
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 14 }}
+            initial={{ opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.96, y: 14 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="bg-surface w-full max-w-lg sm:max-w-xl md:max-w-4xl lg:max-w-5xl h-[88dvh] md:h-[580px] lg:h-[620px] rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden relative border border-outline-variant/30 text-on-surface"
+            exit={{ opacity: 0, scale: 0.96, y: 12 }}
+            transition={{ duration: 0.18, ease: "easeOut" }}
+            className="bg-surface w-full max-w-lg sm:max-w-xl md:max-w-4xl lg:max-w-5xl h-[88dvh] md:h-[580px] lg:h-[620px] rounded-2xl sm:rounded-3xl shadow-2xl flex flex-col md:flex-row overflow-hidden relative border border-outline-variant/30 text-on-surface transform-gpu"
             onClick={(e) => e.stopPropagation()}
           >
             {/* 1. MOBILE ONLY TOP HEADER (< md) */}
-            <div className="md:hidden px-3.5 sm:px-5 py-2.5 sm:py-3 flex items-center justify-between shrink-0 border-b border-outline-variant/20 bg-surface/95 backdrop-blur-md z-10">
+            <div className="md:hidden px-3.5 sm:px-5 py-2.5 sm:py-3 flex items-center justify-between shrink-0 border-b border-outline-variant/20 bg-surface z-10">
               <div className="flex items-center gap-2 min-w-0 pr-2">
                 <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] sm:text-xs font-semibold bg-primary/10 text-primary shrink-0">
                   <span className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -248,24 +248,24 @@ export default function UmkmDetailModal({
                   Memuat Produk...
                 </h4>
                 <p className="text-xs text-on-surface-variant mt-0.5">
-                  Mengambil data UMKM Kedungdowo
+                  Menyiapkan informasi detail produk UMKM
                 </p>
               </div>
             ) : error ? (
               /* Modal Body: Error State */
-              <div className="py-16 flex flex-col items-center justify-center text-center max-w-md mx-auto p-4 flex-grow w-full">
-                <div className="w-11 h-11 rounded-2xl bg-error/10 text-error flex items-center justify-center mb-2.5">
+              <div className="py-20 px-6 flex flex-col items-center justify-center text-center flex-grow w-full">
+                <div className="w-12 h-12 rounded-full bg-error-container/40 text-error flex items-center justify-center mb-3">
                   <Icon name="error" className="text-2xl" />
                 </div>
-                <h4 className="font-serif font-bold text-sm sm:text-base text-on-surface mb-1">
+                <h4 className="font-serif font-bold text-base text-on-surface mb-1">
                   Gagal Memuat Produk
                 </h4>
-                <p className="text-xs text-on-surface-variant mb-3">{error}</p>
+                <p className="text-xs text-on-surface-variant max-w-xs mb-4">{error}</p>
                 <button
                   type="button"
                   onClick={() => {
-                    const idToFetch = productSlug || productId;
-                    if (idToFetch) fetchProductDetail(idToFetch);
+                    if (productSlug) fetchProductDetail(productSlug);
+                    else if (productId) fetchProductDetail(productId);
                   }}
                   className="px-4 py-2 bg-primary text-on-primary rounded-xl font-semibold text-xs hover:opacity-90 transition-opacity flex items-center gap-1.5 mx-auto"
                 >
@@ -279,7 +279,7 @@ export default function UmkmDetailModal({
                 <div className="shrink-0 md:shrink md:w-[52%] lg:w-[54%] px-3.5 sm:px-5 md:p-6 pt-2.5 pb-2 md:pt-6 md:pb-6 bg-surface md:bg-surface-container-lowest/60 md:border-r border-outline-variant/20 flex flex-col justify-between">
                   <div className="flex flex-col gap-1.5 md:gap-3 h-full">
                     {/* Gallery Viewport with Native Hardware Touch Scroll-Snap */}
-                    <div className="w-full h-40 xs:h-44 sm:h-56 md:h-[380px] lg:h-[420px] rounded-2xl overflow-hidden bg-surface-container relative border border-outline-variant/30 shadow-inner group/gallery flex items-center justify-center">
+                    <div className="w-full h-40 xs:h-44 sm:h-56 md:h-[380px] lg:h-[420px] rounded-2xl overflow-hidden bg-neutral-900 relative border border-outline-variant/30 shadow-inner group/gallery flex items-center justify-center">
                       {images.length > 0 ? (
                         <>
                           {/* Native CSS Scroll-Snap Container */}
@@ -295,24 +295,25 @@ export default function UmkmDetailModal({
                             {images.map((img, idx) => (
                               <div
                                 key={idx}
-                                className="w-full h-full shrink-0 snap-center flex items-center justify-center overflow-hidden relative bg-black/30"
+                                className="w-full h-full shrink-0 snap-center flex items-center justify-center overflow-hidden relative bg-neutral-950"
                                 style={{ scrollSnapAlign: "center", scrollSnapStop: "always" }}
                               >
-                                {/* Background: Full photo filling frame with very subtle blur */}
+                                {/* Ambient Background matching photo */}
                                 <img
                                   src={img}
                                   alt=""
                                   aria-hidden="true"
-                                  className="absolute inset-0 w-full h-full object-cover blur-[3px] scale-105 opacity-85 brightness-85 select-none pointer-events-none"
+                                  decoding="async"
+                                  className="absolute inset-0 w-full h-full object-cover opacity-35 scale-105 select-none pointer-events-none"
                                   draggable={false}
                                 />
-                                <div className="absolute inset-0 bg-black/10 pointer-events-none" />
 
                                 {/* Foreground: Full Uncropped photo */}
                                 <img
                                   src={img}
                                   alt={`${product.namaProduk} - foto ${idx + 1}`}
-                                  className="w-full h-full object-contain relative z-10 select-none pointer-events-none drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] p-1.5"
+                                  decoding="async"
+                                  className="w-full h-full object-contain relative z-10 select-none pointer-events-none drop-shadow-md p-1"
                                   draggable={false}
                                 />
                               </div>
@@ -329,7 +330,7 @@ export default function UmkmDetailModal({
                                     (activeImageIdx - 1 + images.length) % images.length
                                   )
                                 }
-                                className="absolute left-2.5 top-0 bottom-0 my-auto w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-black/50 hover:bg-black/75 text-white rounded-full backdrop-blur-md transition-all z-20 flex items-center justify-center shadow-lg active:scale-90 cursor-pointer"
+                                className="absolute left-2.5 top-0 bottom-0 my-auto w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-black/60 hover:bg-black/80 text-white rounded-full transition-all z-20 flex items-center justify-center shadow-md active:scale-90 cursor-pointer"
                                 aria-label="Foto sebelumnya"
                               >
                                 <Icon name="chevron_left" className="text-lg sm:text-xl md:text-2xl" />
@@ -341,19 +342,19 @@ export default function UmkmDetailModal({
                                 onClick={() =>
                                   scrollToImage((activeImageIdx + 1) % images.length)
                                 }
-                                className="absolute right-2.5 top-0 bottom-0 my-auto w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-black/50 hover:bg-black/75 text-white rounded-full backdrop-blur-md transition-all z-20 flex items-center justify-center shadow-lg active:scale-90 cursor-pointer"
+                                className="absolute right-2.5 top-0 bottom-0 my-auto w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-black/60 hover:bg-black/80 text-white rounded-full transition-all z-20 flex items-center justify-center shadow-md active:scale-90 cursor-pointer"
                                 aria-label="Foto selanjutnya"
                               >
                                 <Icon name="chevron_right" className="text-lg sm:text-xl md:text-2xl" />
                               </button>
 
                               {/* Counter Badge */}
-                              <div className="absolute bottom-2.5 right-2.5 bg-black/60 backdrop-blur-md text-white text-[9px] sm:text-[10px] md:text-xs font-semibold px-2.5 py-0.5 rounded-full pointer-events-none z-20 tracking-wider">
+                              <div className="absolute bottom-2.5 right-2.5 bg-black/70 text-white text-[9px] sm:text-[10px] md:text-xs font-semibold px-2.5 py-0.5 rounded-full pointer-events-none z-20 tracking-wider">
                                 {activeImageIdx + 1} / {images.length}
                               </div>
 
                               {/* Indicator Dots */}
-                              <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 bg-black/40 backdrop-blur-md px-2 py-1 rounded-full pointer-events-none">
+                              <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 flex gap-1.5 z-20 bg-black/50 px-2 py-1 rounded-full pointer-events-none">
                                 {images.map((_, idx) => (
                                   <div
                                     key={idx}
@@ -393,6 +394,8 @@ export default function UmkmDetailModal({
                             <img
                               src={img}
                               alt={`Thumbnail ${idx + 1}`}
+                              decoding="async"
+                              loading="lazy"
                               className="w-full h-full object-cover select-none pointer-events-none"
                               draggable={false}
                             />
