@@ -35,31 +35,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         {/* TopAppBar */}
         <header className="flex justify-between items-center h-20 px-6 md:px-10 shrink-0 bg-white/70 backdrop-blur-xl border-b border-outline-variant/30 relative z-30">
           
-          {/* Search Bar */}
-          <div className="flex-1 max-w-md hidden sm:block">
-            <div className="relative flex items-center w-full h-11 rounded-full bg-white border border-outline-variant/20 focus-within:border-primary/30 focus-within:ring-2 focus-within:ring-primary/10 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.02)] overflow-hidden transition-all duration-300">
-              <div className="grid place-items-center h-full w-12 text-on-surface-variant/70">
-                <Icon name="search" className="text-xl" />
-              </div>
-              <input
-                className="peer h-full w-full outline-none text-sm text-on-surface bg-transparent pr-4 placeholder:text-on-surface-variant/50"
-                id="search"
-                placeholder="Cari berita, UMKM, perangkat..."
-                type="text"
-              />
-            </div>
-          </div>
-
+          {/* Search Bar Removed as per request */}
           {/* Trailing Actions & Profile */}
           <div className="flex items-center gap-3 ml-auto pl-12 md:pl-0">
-            <button className="min-h-[44px] py-2 px-4 w-10 h-10 flex items-center justify-center hover:bg-white/60 rounded-full transition-all text-on-surface-variant/80 border border-outline-variant/25 shadow-sm relative group bg-white/40">
-              <Icon name="notifications" className="text-xl group-hover:text-primary transition-colors" />
-              <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-error rounded-full border border-white"></span>
-            </button>
-            <button className="min-h-[44px] py-2 px-4 w-10 h-10 hidden sm:flex items-center justify-center hover:bg-white/60 rounded-full transition-all text-on-surface-variant/80 border border-outline-variant/25 shadow-sm group bg-white/40">
-              <Icon name="help" className="text-xl group-hover:text-primary transition-colors" />
-            </button>
-            
             {/* Interactive Profile Dropdown & Logout */}
             <AdminHeaderProfile
               logoutAction={handleLogout}

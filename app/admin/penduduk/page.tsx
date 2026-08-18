@@ -7,12 +7,6 @@ export const metadata = { title: "Manajemen Statistik & Fasilitas Desa | Admin D
 export default async function DataPendudukPage() {
   // Try to fetch data
   let groupedStats = await getStatistikPenduduk();
-  
-  // If database only has old initial seed (less than 5 categories) or missing Fasilitas, re-seed
-  if (Object.keys(groupedStats).length < 5 || !groupedStats["Fasilitas Pendidikan"]) {
-    await seedStatistikPenduduk();
-    groupedStats = await getStatistikPenduduk();
-  }
 
   // Calculate overall total from "Jenis Kelamin" category
   const genderStats = groupedStats["Jenis Kelamin"] || [];

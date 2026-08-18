@@ -232,18 +232,9 @@ export default function UmkmClient({ initialData }: { initialData: any[] }) {
               paginatedData.map((item) => (
                 <tr key={item.id} className="border-b border-outline-variant/10 hover:bg-surface-container-lowest/50 transition-colors">
                   <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded bg-primary/10 flex items-center justify-center overflow-hidden flex-shrink-0">
-                        {item.fotoUrl ? (
-                          <img src={item.fotoUrl} alt={item.namaProduk} className="w-full h-full object-cover" />
-                        ) : (
-                          <Icon name="inventory_2" className="text-primary/50 text-xl" />
-                        )}
-                      </div>
-                      <div>
-                        <p className="font-bold text-on-background">{item.namaProduk}</p>
-                        <p className="text-xs text-on-surface-variant truncate max-w-[200px]">{item.deskripsi}</p>
-                      </div>
+                    <div>
+                      <p className="font-bold text-on-background">{item.namaProduk}</p>
+                      <p className="text-xs text-on-surface-variant truncate max-w-[200px]">{item.deskripsi}</p>
                     </div>
                   </td>
                   <td className="px-6 py-4">

@@ -5,32 +5,6 @@ import { revalidatePath } from 'next/cache';
 
 // Fetch all statistics grouped by category
 export async function getStatistikPenduduk() {
-  // Proactively run migration updates to match user's requested education levels
-  const hasOldLabels = await prisma.statistikPenduduk.findFirst({
-    where: {
-      OR: [
-        { label: 'Belum/Tidak/Sudah Tidak Sekolah' },
-        { label: 'SLTP' },
-        { label: 'SLTA / SMK' },
-      ],
-    },
-  });
-
-  if (hasOldLabels) {
-    await prisma.statistikPenduduk.updateMany({
-      where: { kategori: 'Tingkat Pendidikan', label: 'Belum/Tidak/Sudah Tidak Sekolah' },
-      data: { label: 'Belum/Tidak Sekolah' }
-    });
-    await prisma.statistikPenduduk.updateMany({
-      where: { kategori: 'Tingkat Pendidikan', label: 'SLTP' },
-      data: { label: 'SMP' }
-    });
-    await prisma.statistikPenduduk.updateMany({
-      where: { kategori: 'Tingkat Pendidikan', label: 'SLTA / SMK' },
-      data: { label: 'SMA/SMK' }
-    });
-  }
-
   const data = await prisma.statistikPenduduk.findMany({
     orderBy: [
       { kategori: 'asc' },
